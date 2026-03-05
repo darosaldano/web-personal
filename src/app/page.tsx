@@ -500,7 +500,6 @@ export default function Home() {
           </h2>
           <p style={{ color: 'var(--gray-2)', fontSize: '.95rem', maxWidth: '480px', margin: '0 auto 2rem' }}>
             Hablemos sobre cómo convertir el caos en un sistema que funcione.
-            Sin compromiso, sin buzzwords.
           </p>
           <div style={{ display: 'flex', gap: '.9rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contacto" className="btn btn-p">Agendar una conversación →</Link>
