@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Timeline from '@/components/Timeline';
 import BlogCard from '@/components/BlogCard';
 import { getAllPosts } from '@/lib/blog';
@@ -51,7 +52,14 @@ export default function Home() {
           <h2 className="section-title">La persona detrás del <span>sistema</span></h2>
           <div className="about-grid">
             <div className="about-image">
-              [ Foto Profesional ]
+              <Image
+                src="/dario-saldano.jpg"
+                alt="Darío Saldaño - Strategic Tech Consulting"
+                width={500}
+                height={380}
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                priority
+              />
             </div>
             <div className="about-text">
               <p>
