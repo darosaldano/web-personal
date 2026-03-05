@@ -33,7 +33,7 @@ export default function ContactPage() {
                         </div>
                         <div className="contact-detail">
                             <div className="icon">✉️</div>
-                            <span>contacto@dariosaldano.com.ar</span>
+                            <span>daro.saldano@gmail.com</span>
                         </div>
                         <div className="contact-detail">
                             <div className="icon">🌐</div>
