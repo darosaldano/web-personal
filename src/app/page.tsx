@@ -1,0 +1,497 @@
+import Link from 'next/link';
+import Timeline from '@/components/Timeline';
+import BlogCard from '@/components/BlogCard';
+import { getAllPosts } from '@/lib/blog';
+
+export default function Home() {
+  const recentPosts = getAllPosts().slice(0, 3);
+
+  return (
+    <>
+      {/* ═══ HERO ═══ */}
+      <section className="hero" id="hero">
+        <div className="container">
+          <span className="kicker">
+            Consultor Estratégico · Tecnología &amp; Liderazgo · Chilecito, Argentina
+          </span>
+          <h1 className="headline">
+            Convierto caos en<br />
+            <span className="accent">sistemas predecibles</span><br />
+          </h1>
+          <p className="sub">
+            Ayudo a dueños de empresas, líderes y desarrolladores en LATAM a construir equipos de software
+            que entregan resultados reales, sin el caos que normalmente los frena.
+            Con SDD + IA + Liderazgo con Propósito.
+          </p>
+          <div className="hero-buttons">
+            <Link href="/contacto" className="btn btn-p">Hablemos de tu proyecto →</Link>
+            <Link href="/#servicios" className="btn btn-g">Ver mis servicios</Link>
+          </div>
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <div className="number">+16</div>
+              <div className="label">Años de experiencia</div>
+            </div>
+            <div className="hero-stat">
+              <div className="number gold">+20</div>
+              <div className="label">Proyectos entregados</div>
+            </div>
+            <div className="hero-stat">
+              <div className="number mint">-40%</div>
+              <div className="label">Tiempo Optimizado</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SOBRE MÍ ═══ */}
+      <section id="sobre-mi">
+        <div className="container">
+          <div className="section-label">Sobre Mí</div>
+          <h2 className="section-title">La persona detrás del <span>sistema</span></h2>
+          <div className="about-grid">
+            <div className="about-image">
+              [ Foto Profesional ]
+            </div>
+            <div className="about-text">
+              <p>
+                <span className="about-highlight">
+                  Diciembre de 2003, Córdoba.
+                </span> Tenía catorce años y mi atención estaba clavada en una mesa de pirotecnia, trazando mis primeros cálculos de costos a lápiz. Mi propósito no era solo vender, sino conquistar mi autonomía y construir valor real. Pronto entendí que el éxito exigía agilidad: reinvertir ganancias y reponer el stock sin excedentes. Sin saberlo, ya estaba aplicando en la calle lecciones clave sobre el escalamiento de sistemas, midiendo resultados e iterando sobre la marcha.
+              </p>
+              <p>
+                Esa experiencia me dejó más de un 50 % de ganancia, pero el verdadero retorno de inversión fue mi transformación personal. Aprendí a calcular rentabilidades, a tratar con el cliente y a comprobar el impacto de tener estrategia mucho antes de pisar una universidad. Aquella mesa en el barrio terminó convirtiéndose en el código fuente de mi carrera profesional; fue la chispa que fusionó para siempre mi vocación por el emprendimiento y el liderazgo.
+              </p>
+              <p>
+                Hoy, tras más de 16 años de trayectoria en la industria del software, aplico esa misma resiliencia estratégica para escalar equipos, desarrollar productos y liderar ecosistemas tecnológicos con propósito. Al explorar a continuación mi experiencia y mis servicios, no solo encontrarás el resumen de mi carrera; te llevarás una certeza absoluta: no hace falta estar en el centro para generar un impacto a gran escala, hace falta propósito.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ TIMELINE ═══ */}
+      <Timeline />
+
+      {/* ═══ SERVICIOS ═══ */}
+      <section id="servicios" style={{ background: 'var(--ink-2)' }}>
+        <div className="container">
+          <div className="section-label">Servicios</div>
+          <h2 className="section-title">Tres pilares para <span>resultados reales</span></h2>
+          <p className="section-subtitle">
+            Cada servicio diseñado para resolver problemas reales de empresas que
+            necesitan escalar su tecnología sin perder el control.
+          </p>
+          <div className="card-grid">
+
+            {/* Service 1 */}
+            <div className="svc-card">
+              <div className="svc-icon gold">📐</div>
+              <span className="svc-tag" style={{ color: 'var(--gold-xl)' }}>
+                Pilar 01 · Nueva Metodología
+              </span>
+              <div className="svc-title">SDD + IA para Equipos de Desarrollo</div>
+              <p className="svc-desc">
+                El problema más costoso en el desarrollo de software es construir lo incorrecto por no haber especificado correctamente. Esta metodología invierte el orden habitual: Primero se especifica con precisión, luego la IA genera el código base y el equipo valida y refina. Menos retrabajo, más velocidad, adopción de IA sin caos.
+              </p>
+              <ul className="svc-list">
+                <li>Formación en SDD</li>
+                <li>Templates y flujos de trabajo</li>
+                <li>Adopción de IA Generativa</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--gold-l)' }}>
+                Explorar servicio <span>→</span>
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="svc-card">
+              <div className="svc-icon mint">🤝</div>
+              <span className="svc-tag" style={{ color: 'var(--mint-l)' }}>Pilar 02</span>
+              <div className="svc-title">Liderazgo con Propósito</div>
+              <p className="svc-desc">
+                Programas para líderes que quieren construir equipos de alto rendimiento con cultura sólida y valores claros. El liderazgo transformacional construye equipos que funcionan cuando el líder no está, y ese es el único tipo de equipo que escala de verdad
+              </p>
+              <ul className="svc-list">
+                <li>Formación de nuevos Líderes</li>
+                <li>Coaching Individual</li>
+                <li>Estructura de carrera técnica</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--mint-l)' }}>
+                Explorar servicio <span>→</span>
+              </div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="svc-card">
+              <div className="svc-icon">🧭</div>
+              <span className="svc-tag">Pilar 03</span>
+              <div className="svc-title">Consultoría Estratégica IT</div>
+              <p className="svc-desc">
+                Tenés una idea, un problema de negocio o un proceso que necesita digitalizarse. No sabés por dónde empezar, qué equipo armar ni cómo asegurarte de que el desarrollo vaya en la dirección correcta. Puedo llevar adelante el proyecto completo.
+              </p>
+              <ul className="svc-list">
+                <li>Relevamiento y especificación</li>
+                <li>Armado y liderazgo del equipo de desarrollo</li>
+                <li>Gestión del proyecto bajo metodología ágil</li>
+              </ul>
+              <div className="svc-cta">Explorar servicio <span>→</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SDD FEATURE ═══ */}
+      <section id="sdd" className="sdd-section">
+        <div className="container">
+          <div className="section-label">Metodología</div>
+          <h2 className="section-title">
+            SDD: <span>Specs Driven Development</span>
+          </h2>
+          <div className="sdd-grid">
+            <div>
+              <p className="section-subtitle" style={{ marginBottom: '1.5rem' }}>
+                El método que convierte <strong style={{ color: 'var(--gold-l)' }}>
+                  incertidumbre</strong> en rentabilidad.
+              </p>
+              <p style={{ color: 'var(--gray-2)', fontSize: '.88rem', lineHeight: 1.65, marginBottom: '1.5rem' }}>
+                SDD es la metodología para equipos IT que necesitan escalar sin
+                perder el control. Parte de una premisa simple: si los specs están mal,
+                todo lo que sigue está mal. SDD ataca la raíz del problema.
+              </p>
+              <div style={{ display: 'flex', gap: '.9rem', flexWrap: 'wrap' }}>
+                <Link href="/contacto" className="btn btn-p">Conocer la metodología →</Link>
+                <Link href="/#proyectos" className="btn btn-g">Ver casos de éxito</Link>
+              </div>
+            </div>
+            <div className="sdd-diagram">
+              [ Diagrama del Proceso SDD ]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ PROYECTOS ═══ */}
+      <section id="proyectos" style={{ background: 'var(--ink-2)' }}>
+        <div className="container">
+          <div className="section-label">Proyectos</div>
+          <h2 className="section-title">Resultados que <span>hablan solos</span></h2>
+          <p className="section-subtitle">
+            Portfolio con métricas reales. Sin promesas vacías — datos concretos.
+          </p>
+          <div className="card-grid">
+            {/* Project 1 — Fintech Brasil */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0E1A2A, #162440)' }}>
+                <div className="pattern" />
+                <span className="badge badge-e" style={{ position: 'relative', zIndex: 1 }}>FinTech · Brasil</span>
+                <div className="prj-metric-big">
+                  <div className="num">R$1.800M</div>
+                  <div className="lbl">Captación en inversiones</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Escalamiento Fintech: +1M de usuarios</div>
+                <p className="prj-desc">Arquitectura y construcción de un producto de inversión masiva. Equipo internacional Argentina-Colombia-Brasil bajo metodologías ágiles.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">+1M</div><div className="key">Usuarios</div></div>
+                  <div className="prj-m"><div className="val">3 países</div><div className="key">Equipo</div></div>
+                  <div className="prj-m"><div className="val">&lt;1 año</div><div className="key">Time to Market</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">Arquitectura</span>
+                  <span className="prj-tag">Agile</span>
+                  <span className="prj-tag">LATAM</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 — SDD + IA */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0B1820, #0D2240)' }}>
+                <div className="pattern" />
+                <span className="badge badge-p" style={{ position: 'relative', zIndex: 1 }}>SDD + IA</span>
+                <div className="prj-metric-big">
+                  <div className="num">-40%</div>
+                  <div className="lbl">Tiempos de entrega</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Transformación SDD + IA Generativa</div>
+                <p className="prj-desc">Transición a modelo de desarrollo &quot;Agent First&quot; con Cursor, Windsurf y modelos avanzados. 70% del código generado por IA, 100% de adopción del equipo.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">70%</div><div className="key">Código IA</div></div>
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Adopción</div></div>
+                  <div className="prj-m"><div className="val">-40%</div><div className="key">Tiempos</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">SDD</span>
+                  <span className="prj-tag">IA Generativa</span>
+                  <span className="prj-tag">Agent First</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 — Soberanía Regional */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0E1A28, #122240)' }}>
+                <div className="pattern" />
+                <span className="badge badge-m" style={{ position: 'relative', zIndex: 1 }}>Impacto Regional</span>
+                <div className="prj-metric-big">
+                  <div className="num">1ª oficina</div>
+                  <div className="lbl">IT en La Rioja</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Soberanía Regional: Oficina IT en Chilecito</div>
+                <p className="prj-desc">Fundé la primera oficina de desarrollo de software en La Rioja. Triangulación Empresa-Universidad-Gobierno con programa de formación para 10 profesionales.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">10</div><div className="key">Profesionales</div></div>
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Sostenible</div></div>
+                  <div className="prj-m"><div className="val">0→1</div><div className="key">Industria</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">Descentralización</span>
+                  <span className="prj-tag">Formación</span>
+                  <span className="prj-tag">Interior AR</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 4 — Trazabilidad BigQuery */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0D1B28, #152540)' }}>
+                <div className="pattern" />
+                <span className="badge badge-e" style={{ position: 'relative', zIndex: 1 }}>Data · FinTech</span>
+                <div className="prj-metric-big">
+                  <div className="num">80%→1%</div>
+                  <div className="lbl">Tasa de discrepancia</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Trazabilidad Financiera en BigQuery</div>
+                <p className="prj-desc">Resolución de crisis de inconsistencia de datos de 2 años para R$2.000M y +1M de usuarios. Modelos dbt + BigQuery con conciliación automatizada.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">R$2.000M</div><div className="key">Cartera</div></div>
+                  <div className="prj-m"><div className="val">+1M</div><div className="key">Usuarios</div></div>
+                  <div className="prj-m"><div className="val">99%</div><div className="key">Precisión</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">BigQuery</span>
+                  <span className="prj-tag">dbt</span>
+                  <span className="prj-tag">Data Engineering</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 5 — Migración Legacy */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #101828, #1A2840)' }}>
+                <div className="pattern" />
+                <span className="badge badge-p" style={{ position: 'relative', zIndex: 1 }}>Legacy · Cloud</span>
+                <div className="prj-metric-big">
+                  <div className="num">100%</div>
+                  <div className="lbl">Cartera migrada</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Migración Legacy a Plataforma Cloud</div>
+                <p className="prj-desc">De ecosistema fragmentado con múltiples versiones a plataforma única y estandarizada para +10 entidades financieras. Sin interrumpir operación.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">+10</div><div className="key">Entidades</div></div>
+                  <div className="prj-m"><div className="val">0%</div><div className="key">Downtime</div></div>
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Cloud</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">Low-Code</span>
+                  <span className="prj-tag">Migración</span>
+                  <span className="prj-tag">Finanzas</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 6 — Resiliencia COVID */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0E1820, #0D2238)' }}>
+                <div className="pattern" />
+                <span className="badge badge-m" style={{ position: 'relative', zIndex: 1 }}>Gestión de Crisis</span>
+                <div className="prj-metric-big">
+                  <div className="num">100%</div>
+                  <div className="lbl">Facturación preservada</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Resiliencia Operativa en Pandemia</div>
+                <p className="prj-desc">Transición a 100% remoto y digitalización de cobranzas para clientes financieros. Equipo de 12 personas con productividad y moral intactas.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">12</div><div className="key">Personas</div></div>
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Remoto</div></div>
+                  <div className="prj-m"><div className="val">0%</div><div className="key">Pérdida</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">Crisis</span>
+                  <span className="prj-tag">Liderazgo</span>
+                  <span className="prj-tag">Remoto</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 7 — Visualización de Activos */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0C1A2A, #142240)' }}>
+                <div className="pattern" />
+                <span className="badge badge-e" style={{ position: 'relative', zIndex: 1 }}>FinTech · UX</span>
+                <div className="prj-metric-big">
+                  <div className="num">+1M</div>
+                  <div className="lbl">Usuarios beneficiados</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Visualización de Activos Financieros</div>
+                <p className="prj-desc">Herramienta para +1M de usuarios integrando fuentes heterogéneas. Arquitectura MongoDB (Time-series) + BigQuery con autocompletado de datos.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">2 años</div><div className="key">Datos saneados</div></div>
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Confiable</div></div>
+                  <div className="prj-m"><div className="val">+Retención</div><div className="key">Clientes</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">MongoDB</span>
+                  <span className="prj-tag">BigQuery</span>
+                  <span className="prj-tag">Data</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 8 — KMS Gestión del Conocimiento */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0E1B28, #162038)' }}>
+                <div className="pattern" />
+                <span className="badge badge-p" style={{ position: 'relative', zIndex: 1 }}>Procesos</span>
+                <div className="prj-metric-big">
+                  <div className="num">-30%</div>
+                  <div className="lbl">Curva de aprendizaje</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Sistema de Gestión del Conocimiento (KMS)</div>
+                <p className="prj-desc">Implementación de KMS basado en Alfresco bajo estándares ISO. Eliminé la dependencia de &quot;héroes individuales&quot; y democraticé el saber técnico.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">3→2 meses</div><div className="key">Onboarding</div></div>
+                  <div className="prj-m"><div className="val">ISO</div><div className="key">Estándar</div></div>
+                  <div className="prj-m"><div className="val">+30%</div><div className="key">Mantenibilidad</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">Alfresco</span>
+                  <span className="prj-tag">ISO</span>
+                  <span className="prj-tag">Knowledge Mgmt</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 9 — Liderazgo Retail */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #12182A, #1A2038)' }}>
+                <div className="pattern" />
+                <span className="badge badge-m" style={{ position: 'relative', zIndex: 1 }}>Retail · Liderazgo</span>
+                <div className="prj-metric-big">
+                  <div className="num">100%</div>
+                  <div className="lbl">Delegación autónoma</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">Liderazgo Transformacional en Retail</div>
+                <p className="prj-desc">Adquisición de 2 unidades gastronómicas y transformación en activos 100% delegables. Documentación de procesos, formación de equipo de alto rendimiento.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">2</div><div className="key">Negocios</div></div>
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Autónomo</div></div>
+                  <div className="prj-m"><div className="val">Venta</div><div className="key">Exit exitoso</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">Retail</span>
+                  <span className="prj-tag">Procesos</span>
+                  <span className="prj-tag">Delegación</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 10 — SDD Loterías */}
+            <div className="prj-card">
+              <div className="prj-header" style={{ background: 'linear-gradient(135deg, #0E1A2A, #142238)' }}>
+                <div className="pattern" />
+                <span className="badge badge-p" style={{ position: 'relative', zIndex: 1 }}>SDD</span>
+                <div className="prj-metric-big">
+                  <div className="num">SDD</div>
+                  <div className="lbl">Especificación integral</div>
+                </div>
+              </div>
+              <div className="prj-body">
+                <div className="prj-title">SDD para Gestión de Loterías</div>
+                <p className="prj-desc">Relevamiento integral y especificaciones técnicas para software de agencias de lotería. Reglas de negocio, flujos de datos y casos de uso antes de una línea de código.</p>
+                <div className="prj-metrics">
+                  <div className="prj-m"><div className="val">100%</div><div className="key">Specs previos</div></div>
+                  <div className="prj-m"><div className="val">0</div><div className="key">Desviaciones</div></div>
+                  <div className="prj-m"><div className="val">Total</div><div className="key">Alineamiento</div></div>
+                </div>
+                <div className="prj-tags">
+                  <span className="prj-tag">SDD</span>
+                  <span className="prj-tag">Requerimientos</span>
+                  <span className="prj-tag">Regulado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ BLOG PREVIEW ═══ */}
+      <section id="blog" style={{ background: 'var(--ink-2)' }}>
+        <div className="container">
+          <div className="section-label">Blog</div>
+          <h2 className="section-title">Ideas que <span>construyen</span></h2>
+          <p className="section-subtitle">
+            Artículos sobre tecnología, liderazgo, SDD y cómo escalar equipos IT en LATAM.
+          </p>
+          {recentPosts.length > 0 ? (
+            <div className="card-grid">
+              {recentPosts.map(post => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+          ) : (
+            <div style={{
+              textAlign: 'center',
+              padding: '3rem 1rem',
+              color: 'var(--gray-3)',
+              fontFamily: 'var(--font-code)',
+              fontSize: '.82rem'
+            }}>
+              Próximamente: artículos sobre SDD, liderazgo IT e IA aplicada.
+            </div>
+          )}
+          {recentPosts.length > 0 && (
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <Link href="/blog" className="btn btn-g">Ver todos los artículos →</Link>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ═══ CTA CONTACTO ═══ */}
+      <section className="contact-section" id="contacto-cta">
+        <div className="container" style={{ textAlign: 'center', padding: '4rem 1.75rem' }}>
+          <h2 className="section-title" style={{ marginBottom: '.8rem' }}>
+            ¿Tu equipo está <span>atascado</span>?
+          </h2>
+          <p style={{ color: 'var(--gray-2)', fontSize: '.95rem', maxWidth: '480px', margin: '0 auto 2rem' }}>
+            Hablemos sobre cómo convertir el caos en un sistema que funcione.
+            Sin compromiso, sin buzzwords.
+          </p>
+          <div style={{ display: 'flex', gap: '.9rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contacto" className="btn btn-p">Agendar una conversación →</Link>
+            <Link href="/#servicios" className="btn btn-g">Ver servicios</Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
