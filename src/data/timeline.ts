@@ -15,20 +15,18 @@ export const workExperience: TimelineItem[] = [
     { title: 'Pirotecnia', company: 'Córdoba', start: 2003 + m(11), end: 2004 + m(1), color: '#B84832', category: 'Emprendimiento' },
     { title: 'Servicio de Sonido e Iluminación + Electricidad Domiciliaria', company: 'Córdoba', start: 2005 + m(8), end: 2013 + m(8), color: '#B84832', category: 'Emprendimiento' },
     { title: 'Retail Alimentos Balanceados "Almapetcare"', company: 'Córdoba', start: 2016 + m(1), end: 2016 + m(9), color: '#B84832', category: 'Emprendimiento' },
-    { title: 'Retail Pastelería Franceschini', company: 'Córdoba', start: 2023 + m(8), end: 2025 + m(6), color: '#B84832', category: 'Emprendimiento' },
-    { title: 'Retail Drugstore El Misa', company: 'Chilecito', start: 2024 + m(5), end: 2026 + m(3), color: '#B84832', category: 'Emprendimiento' },
+    { title: 'Retails Pastelería Franceschini + Drugstore El Misa', company: 'Córdoba y Chilecito', start: 2023 + m(8), end: 2026 + m(2), color: '#B84832', category: 'Emprendimiento' },
 
     // Experiencia laboral
-    { title: 'Desarrollador Jr Oracle', company: '2GSOFT · Córdoba', start: 2006 + m(8), end: 2009 + m(8), color: '#1ABFBF', category: 'Rol técnico' },
-    { title: 'Desarrollador Oracle SSr', company: 'Inthegra · Córdoba', start: 2010 + m(11), end: 2016 + m(8), color: '#1ABFBF', category: 'Rol técnico' },
+    { title: 'Desarrollador Jr Oracle', company: '2GSOFT · Córdoba', start: 2008 + m(8), end: 2009 + m(8), color: '#1ABFBF', category: 'Rol técnico' },
+    { title: 'Desarrollador Oracle SSr', company: 'Inthegra · Córdoba', start: 2010 + m(8), end: 2016 + m(8), color: '#1ABFBF', category: 'Rol técnico' },
     { title: 'Responsable de Área / Jefe de Desarrollo', company: 'Inthegra · Córdoba', start: 2016 + m(8), end: 2017 + m(3), color: '#1ABFBF', category: 'Liderazgo / Gestión' },
-    { title: 'Product Manager · Team Leader · Gerente de Oficina', company: 'Inthegra · Chilecito', start: 2017 + m(3), end: 2022 + m(3), color: '#1ABFBF', category: 'Liderazgo / Gestión' },
-    { title: 'Project Leader – Inversiones Brasil', company: 'MercadoPago', start: 2022 + m(3), end: 2026 + m(1), color: '#1ABFBF', category: 'Liderazgo / Gestión' },
-
+    { title: 'Product Manager / Team Leader', company: 'Inthegra · Chilecito', start: 2017 + m(3), end: 2022 + m(3), color: '#1ABFBF', category: 'Liderazgo / Gestión' },
+    { title: 'Project Leader – Inversiones Brasil', company: 'MercadoPago', start: 2022 + m(3), end: 2026 + m(2), color: '#1ABFBF', category: 'Liderazgo / Gestión' },
+    { title: 'Fractional CTO / Consultor SDD+IA', company: 'Autónomo', start: 2026 + m(2), end: 2026 + m(12), color: '#1ABFBF', category: 'Liderazgo / Gestión' },
     // Proyectos paralelos
     { title: 'Mejora Continua en PYME Textil Emcortex', company: 'Córdoba', start: 2010 + m(3), end: 2010 + m(6), color: '#B84832', category: 'Emprendimiento' },
-    { title: 'Consultor de Emprendimientos – Red de Mentores', company: 'Red de Mentores', start: 2018 + m(2), end: 2018 + m(7), color: '#B84832', category: 'Emprendimiento' },
-    { title: 'Presidente Rotaract Club Chilecito', company: 'Rotaract', start: 2018 + m(7), end: 2019 + m(6), color: '#B84832', category: 'Emprendimiento' },
+    { title: 'Startup Oficina de Desarrollo de Software', company: 'Inthegra', start: 2018 + m(1), end: 2022 + m(3), color: '#B84832', category: 'Emprendimiento' },
 ];
 
 export const educationExperience: TimelineItem[] = [
@@ -36,7 +34,6 @@ export const educationExperience: TimelineItem[] = [
     { title: 'Estrategias Para el Nuevo Liderazgo', company: 'AArEII', start: 2008, end: 2008 + m(12), color: '#9EB8C4' },
     { title: 'Project Management', company: 'Universidad de Buenos Aires (Online)', start: 2011, end: 2012 + m(12), color: '#9EB8C4' },
     { title: 'Formación en Liderazgo', company: 'Xinectia', start: 2011, end: 2012 + m(12), color: '#9EB8C4' },
-    { title: 'Marketing, Ventas, Administración y Contabilidad', company: 'E-Learning', start: 2012, end: 2013 + m(12), color: '#9EB8C4' },
     { title: 'Gestión de Riesgos', company: 'Cámara Argentina de Comercio', start: 2013 + m(5), end: 2013 + m(8), color: '#9EB8C4' },
     { title: 'Gestión de Pymes', company: 'Cámara Argentina de Comercio', start: 2013 + m(7), end: 2013 + m(12), color: '#9EB8C4' },
     { title: 'Diplomatura en Gestión Gerencial', company: 'Universidad Católica de Córdoba', start: 2014, end: 2014 + m(12), color: '#2ABDD4' },
@@ -47,7 +44,7 @@ export const educationExperience: TimelineItem[] = [
     { title: 'Diplomatura en Coaching Financiera', company: 'Escuela de Coaching Ontológico Americano', start: 2024, end: 2024 + m(12), color: '#2ABDD4' },
     { title: 'Diplomatura en Dirección de Empresas', company: 'Universidad Nacional de Córdoba', start: 2024, end: 2024 + m(12), color: '#2ABDD4' },
     { title: 'Certificación Be Trainer', company: 'Mercadolibre', start: 2025, end: 2025 + m(6), color: '#2ABDD4' },
-    { title: 'IA Generativa, Prompt Engineering, Agentes de IA', company: 'Gemini · GPT · Cursor · Windsurf', start: 2025, end: 2025 + m(12), color: '#2ABDD4' },
+    { title: 'IA Generativa, Prompt Engineering, SDD, Agentes de IA, IDEs IA First', company: 'Autoaprendizaje', start: 2025, end: 2026 + m(12), color: '#2ABDD4' },
 ];
 
 export const legendItems = [

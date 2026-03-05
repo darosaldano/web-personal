@@ -79,8 +79,7 @@ export default function Timeline() {
                 <div className="section-label">Trayectoria</div>
                 <h2 className="section-title">Línea de <span>Tiempo</span></h2>
                 <p className="section-subtitle">
-                    2003 — 2027. Arriba: experiencia laboral · Abajo: formación.
-                    Posicioná el mouse sobre cada bloque para ver los detalles.
+                    2003 — 2027. Posicioná el mouse sobre cada bloque para ver los detalles.
                 </p>
 
                 {/* Legend */}
@@ -254,8 +253,8 @@ export default function Timeline() {
 
                 <div className="info-box" style={{ marginTop: '1.5rem' }}>
                     <p>
-                        <strong>24 años de presión geológica:</strong> De trainee en 2GSoft hasta Fractional CTO
-                        con IA en LATAM. La cordillera no se construye en un día — ni los sistemas que escalan.
+                        <strong>18 años de experiencia en IT:</strong> De trainee en 2GSoft hasta Fractional CTO
+                        con IA en LATAM. La cordillera no se construye en un día, los sistemas que escalan tampoco.
                     </p>
                 </div>
             </div>
@@ -272,7 +271,7 @@ export default function Timeline() {
                         color: tooltip.item.color, letterSpacing: '.1em',
                         textTransform: 'uppercase', marginBottom: '.4rem'
                     }}>
-                        {tooltip.item.start} — {tooltip.item.end} &nbsp;·&nbsp;
+                        {Math.trunc(tooltip.item.start)} — {Math.trunc(tooltip.item.end)} &nbsp;·&nbsp;
                         {Math.round(tooltip.item.end - tooltip.item.start)} año{Math.round(tooltip.item.end - tooltip.item.start) !== 1 ? 's' : ''}
                     </div>
                     <div style={{

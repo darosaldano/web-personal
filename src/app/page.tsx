@@ -30,15 +30,23 @@ export default function Home() {
           </div>
           <div className="hero-stats">
             <div className="hero-stat">
-              <div className="number">+16</div>
-              <div className="label">Años de experiencia</div>
+              <div className="number">+17</div>
+              <div className="label">Años en la industria</div>
+            </div>
+            <div className="hero-stat">
+              <div className="number electric">R$1.8B</div>
+              <div className="label">Captados en Mercadopago</div>
             </div>
             <div className="hero-stat">
               <div className="number gold">+20</div>
               <div className="label">Proyectos entregados</div>
             </div>
             <div className="hero-stat">
-              <div className="number mint">-40%</div>
+              <div className="number mint">+10</div>
+              <div className="label">Lideres Formados</div>
+            </div>
+            <div className="hero-stat">
+              <div className="number">-40%</div>
               <div className="label">Tiempo Optimizado</div>
             </div>
           </div>
