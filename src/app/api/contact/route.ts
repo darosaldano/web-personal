@@ -1,4 +1,7 @@
 import { NextRequest } from 'next/server';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // POST /api/contact — Procesar formulario de contacto
 export async function POST(request: NextRequest) {
@@ -23,7 +26,40 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Opción 1: Enviar a webhook de n8n (si está configurado)
+        // Enviar email vía Resend
+        const { error } = await resend.emails.send({
+            from: 'Web Personal <onboarding@resend.dev>',
+            to: 'daro.saldano@gmail.com',
+            replyTo: email,
+            subject: `Nuevo contacto web: ${name}${company ? ` — ${company}` : ''}`,
+            html: `
+                <div style="font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; background: #0D1117; color: #F2EDE8; padding: 32px; border-radius: 12px;">
+                    <h2 style="color: #1ABFBF; margin-top: 0;">📧 Nuevo mensaje de contacto</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr><td style="padding: 8px 0; color: #8E9A9E;">Nombre</td><td style="padding: 8px 0; color: #F2EDE8; font-weight: 600;">${name}</td></tr>
+                        <tr><td style="padding: 8px 0; color: #8E9A9E;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #1ABFBF;">${email}</a></td></tr>
+                        ${company ? `<tr><td style="padding: 8px 0; color: #8E9A9E;">Empresa</td><td style="padding: 8px 0; color: #F2EDE8;">${company}</td></tr>` : ''}
+                    </table>
+                    <div style="background: #161B22; padding: 20px; border-radius: 8px; border-left: 3px solid #1ABFBF; margin-top: 16px;">
+                        <p style="color: #8E9A9E; margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Mensaje</p>
+                        <p style="color: #F2EDE8; margin: 0; line-height: 1.6; white-space: pre-wrap;">${message}</p>
+                    </div>
+                    <p style="color: #5E7A8A; font-size: 12px; margin-top: 24px; text-align: center;">
+                        Enviado desde dariosaldano.com.ar · ${new Date().toLocaleDateString('es-AR', { dateStyle: 'long' })}
+                    </p>
+                </div>
+            `,
+        });
+
+        if (error) {
+            console.error('Error Resend:', error);
+            return Response.json(
+                { error: 'Error al enviar el email' },
+                { status: 500 }
+            );
+        }
+
+        // También enviar a webhook si está configurado
         const n8nWebhookUrl = process.env.CONTACT_WEBHOOK_URL;
         if (n8nWebhookUrl) {
             try {
@@ -41,20 +77,8 @@ export async function POST(request: NextRequest) {
                 });
             } catch (webhookError) {
                 console.error('Error al enviar a webhook:', webhookError);
-                // No falla la respuesta al usuario, el webhook es opcional
             }
         }
-
-        // Opción 2: Email via SMTP/Resend (configurar cuando se tenga el servicio)
-        // TODO: Integrar con Resend o servicio de email
-        // Por ahora, loguea el contacto
-        console.log('📧 Nuevo contacto:', {
-            name,
-            email,
-            company,
-            message: message.substring(0, 100) + '...',
-            timestamp: new Date().toISOString(),
-        });
 
         return Response.json({
             message: 'Mensaje recibido exitosamente. Te responderé a la brevedad.',
