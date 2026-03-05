@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useState } from 'react';
 import { TimelineItem, workExperience, educationExperience, legendItems } from '@/data/timeline';
 
 const MIN_YEAR = 2003;
@@ -54,14 +54,14 @@ export default function Timeline() {
     const totalHeight = workHeight + AXIS_HEIGHT + eduHeight;
     const axisTop = workHeight + AXIS_HEIGHT / 2;
 
-    const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const handleMouseMove = (e: React.MouseEvent) => {
         if (!tooltip) return;
         let x = e.clientX + 16;
         let y = e.clientY - 70;
         if (x + 250 > window.innerWidth) x = e.clientX - 262;
         if (y < 8) y = e.clientY + 16;
         setTooltip(prev => prev ? { ...prev, x, y } : null);
-    }, [tooltip]);
+    };
 
     // Generate year ticks
     const yearTicks = [];
