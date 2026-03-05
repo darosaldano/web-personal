@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Timeline from '@/components/Timeline';
 import BlogCard from '@/components/BlogCard';
 import { getAllPosts } from '@/lib/blog';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   const recentPosts = getAllPosts().slice(0, 3);
@@ -95,7 +96,7 @@ export default function Home() {
           <div className="section-label">Servicios</div>
           <h2 className="section-title">Tres pilares para <span>resultados reales</span></h2>
           <p className="section-subtitle">
-            Cada servicio diseñado para resolver problemas reales de empresas que
+            Cada servicio diseñado para resolver problemas reales de empresas, emprendedores, líderes y desarrolladores que
             necesitan escalar su tecnología sin perder el control.
           </p>
           <div className="card-grid">
@@ -126,7 +127,7 @@ export default function Home() {
               <span className="svc-tag" style={{ color: 'var(--mint-l)' }}>Pilar 02</span>
               <div className="svc-title">Liderazgo con Propósito</div>
               <p className="svc-desc">
-                Programas para líderes que quieren construir equipos de alto rendimiento con cultura sólida y valores claros. El liderazgo transformacional construye equipos que funcionan cuando el líder no está, y ese es el único tipo de equipo que escala de verdad
+                Programas para líderes y aspirantes a líderes que quieren construir equipos de alto rendimiento con cultura sólida y valores claros. El liderazgo transformacional construye equipos que funcionan cuando el líder no está, y ese es el único tipo de equipo que escala de verdad
               </p>
               <ul className="svc-list">
                 <li>Formación de nuevos Líderes</li>
@@ -181,7 +182,65 @@ export default function Home() {
               </div>
             </div>
             <div className="sdd-diagram">
-              [ Diagrama del Proceso SDD ]
+
+              <div className="sdd-node">
+                <div className="sdd-node__icon">⬡</div>
+                <div className="sdd-node__body">
+                  <div className="sdd-node__stage">Etapa 0</div>
+                  <div className="sdd-node__title">Timón Estratégico</div>
+                  <div className="sdd-node__desc">Principios no negociables, estándares de calidad y arquitectura base antes de iniciar.</div>
+                </div>
+                <div className="sdd-node__doc">Base</div>
+              </div>
+
+              <div className="sdd-arrow"></div>
+
+              <div className="sdd-node">
+                <div className="sdd-node__icon">◈</div>
+                <div className="sdd-node__body">
+                  <div className="sdd-node__stage">Nivel 1 · Intención</div>
+                  <div className="sdd-node__title">Documento de Requerimientos</div>
+                  <div className="sdd-node__desc">¿Qué necesitamos y por qué? Historias de usuario y criterios de aceptación medibles.</div>
+                </div>
+                <div className="sdd-node__doc">Reqs</div>
+              </div>
+
+              <div className="sdd-arrow"></div>
+
+              <div className="sdd-node">
+                <div className="sdd-node__icon">◇</div>
+                <div className="sdd-node__body">
+                  <div className="sdd-node__stage">Nivel 2 · Diseño</div>
+                  <div className="sdd-node__title">Plan de Implementación</div>
+                  <div className="sdd-node__desc">¿Cómo lo construiremos? Arquitectura de la solución vinculada a cada requerimiento.</div>
+                </div>
+                <div className="sdd-node__doc">Plan</div>
+              </div>
+
+              <div className="sdd-arrow"></div>
+
+              <div className="sdd-node">
+                <div className="sdd-node__icon">◉</div>
+                <div className="sdd-node__body">
+                  <div className="sdd-node__stage">Nivel 3 · Tareas</div>
+                  <div className="sdd-node__title">Hoja de Ruta</div>
+                  <div className="sdd-node__desc">¿Quién hace qué y en qué orden? Acciones atómicas con dependencias para humanos e IAs.</div>
+                </div>
+                <div className="sdd-node__doc">Ruta</div>
+              </div>
+
+              <div className="sdd-arrow"></div>
+
+              <div className="sdd-node">
+                <div className="sdd-node__icon">◆</div>
+                <div className="sdd-node__body">
+                  <div className="sdd-node__stage">Nivel 4 · Resultado</div>
+                  <div className="sdd-node__title">Entregable Validado</div>
+                  <div className="sdd-node__desc">Código final validado estrictamente contra los criterios del Nivel 1.</div>
+                </div>
+                <div className="sdd-node__doc">Output</div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -458,6 +517,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ═══ TESTIMONIALS ═══ */}
+      <Testimonials />
 
       {/* ═══ BLOG PREVIEW ═══ */}
       <section id="blog" style={{ background: 'var(--ink-2)' }}>
