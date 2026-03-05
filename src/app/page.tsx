@@ -26,8 +26,8 @@ export default function Home() {
             Con SDD + IA + Liderazgo con Propósito.
           </p>
           <div className="hero-buttons">
-            <Link href="/contacto" className="btn btn-p">Hablemos de tu proyecto →</Link>
-            <Link href="/#servicios" className="btn btn-g">Ver mis servicios</Link>
+            <Link href="/contacto" prefetch={false} className="btn btn-p">Hablemos de tu proyecto →</Link>
+            <Link href="/#servicios" prefetch={false} className="btn btn-g">Ver mis servicios</Link>
           </div>
           <div className="hero-stats">
             <div className="hero-stat">
@@ -177,8 +177,8 @@ export default function Home() {
                 todo lo que sigue está mal. SDD ataca la raíz del problema.
               </p>
               <div style={{ display: 'flex', gap: '.9rem', flexWrap: 'wrap' }}>
-                <Link href="/contacto" className="btn btn-p">Conocer la metodología →</Link>
-                <Link href="/#proyectos" className="btn btn-g">Ver casos de éxito</Link>
+                <Link href="/contacto" prefetch={false} className="btn btn-p">Conocer la metodología →</Link>
+                <Link href="/#proyectos" prefetch={false} className="btn btn-g">Ver casos de éxito</Link>
               </div>
             </div>
             <div className="sdd-diagram">
@@ -548,7 +548,7 @@ export default function Home() {
           )}
           {recentPosts.length > 0 && (
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-              <Link href="/blog" className="btn btn-g">Ver todos los artículos →</Link>
+              <Link href="/blog" prefetch={false} className="btn btn-g">Ver todos los artículos →</Link>
             </div>
           )}
         </div>
@@ -564,8 +564,8 @@ export default function Home() {
             Hablemos sobre cómo convertir el caos en un sistema que funcione.
           </p>
           <div style={{ display: 'flex', gap: '.9rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contacto" className="btn btn-p">Agendar una conversación →</Link>
-            <Link href="/#servicios" className="btn btn-g">Ver servicios</Link>
+            <Link href="/contacto" prefetch={false} className="btn btn-p">Agendar una conversación →</Link>
+            <Link href="/#servicios" prefetch={false} className="btn btn-g">Ver servicios</Link>
           </div>
         </div>
       </section>
