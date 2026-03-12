@@ -17,8 +17,8 @@ export default function Home() {
             Consultor Estratégico · Tecnología &amp; Liderazgo · Chilecito, Argentina
           </span>
           <h1 className="headline">
-            Convierto caos en<br />
-            <span className="accent">sistemas predecibles</span><br />
+            Lidero proyectos<br />
+            <span className="accent">que generan impacto</span><br />
           </h1>
           <p className="sub">
             Ayudo a dueños de empresas, líderes y desarrolladores en LATAM a construir equipos de software
@@ -77,7 +77,7 @@ export default function Home() {
                 </span> Tenía catorce años y mi atención estaba clavada en una mesa de pirotecnia, trazando mis primeros cálculos de costos a lápiz. Mi propósito no era solo vender, sino conquistar mi autonomía y construir valor real. Pronto entendí que el éxito exigía agilidad: reinvertir ganancias y reponer el stock sin excedentes. Sin saberlo, ya estaba aplicando en la calle lecciones clave sobre el escalamiento de sistemas, midiendo resultados e iterando sobre la marcha.
               </p>
               <p>
-                Esa experiencia me dejó más de un 50 % de ganancia, pero el verdadero retorno de inversión fue mi transformación personal. Aprendí a calcular rentabilidades, a tratar con el cliente y a comprobar el impacto de tener estrategia mucho antes de pisar una universidad. Aquella mesa en el barrio terminó convirtiéndose en el código fuente de mi carrera profesional; fue la chispa que fusionó para siempre mi vocación por el emprendimiento y el liderazgo.
+                Esa experiencia me dejó mucho más que pequeñas ganancias y aprendizaje. Aquella mesa en el barrio terminó convirtiéndose en el código fuente de mi carrera profesional; fue la chispa que fusionó para siempre mi vocación por el emprendimiento y el liderazgo.
               </p>
               <p>
                 Hoy, tras más de 16 años de trayectoria en la industria del software, aplico esa misma resiliencia estratégica para escalar equipos, desarrollar productos y liderar ecosistemas tecnológicos con propósito. Al explorar a continuación mi experiencia y mis servicios, no solo encontrarás el resumen de mi carrera; te llevarás una certeza absoluta: no hace falta estar en el centro para generar un impacto a gran escala, hace falta propósito.
