@@ -30,17 +30,17 @@ export default function SoftwareMedidaLanding() {
             No adaptás tu operación al software. El software se adapta a tu operación. Con especificaciones cerradas antes de empezar. Sin sorpresas de alcance.
           </p>
           <div className="hero-actions">
-            <Link href="#contacto" className="btn-primary">
+            <Link href="/contacto?asunto=Software a Medida" className="btn-premium-p">
               Hablar de mi sistema →
             </Link>
-            <Link href="#sdd" className="btn-ghost">
+            <Link href="#sdd" className="btn-premium-g">
               Ver metodología SDD
             </Link>
           </div>
         </div>
 
         <div className="hero-visual">
-          <div className="compare-card">
+          <div className="compare-card card-premium">
             <div className="compare-header">
               <div className="compare-col-head bad">Lo que tenés hoy</div>
               <div className="compare-col-head good">Lo que entregamos</div>
@@ -127,16 +127,16 @@ export default function SoftwareMedidaLanding() {
                   { label: 'Velocidad entrega', val: '+40%' },
                   { label: 'Garantía Dominio', val: '100%' }
                 ].map((m, i) => (
-                  <div key={i} className="bg-white/5 p-6 rounded-lg border border-white/5 text-center">
+                  <div key={i} className="card-premium p-6 text-center">
                     <div className="text-2xl font-bold text-accent mb-1">{m.val}</div>
                     <div className="text-[10px] uppercase tracking-widest text-smoke-m">{m.label}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-8">
+            <div className="card-premium p-8">
               <h4 className="text-accent font-mono text-xs uppercase tracking-widest mb-8">Qué incluye el servicio</h4>
-              <ul className="space-y-6">
+              <ul className="list-premium">
                 {[ 
                   { n: '01', t: 'Relevamiento del negocio', d: 'Entendemos antes de diseñar. Mapeamos procesos y excepciones.' },
                   { n: '02', t: 'Especificación SDD', d: 'Documento de arquitectura con criterios de aceptación firmados.' },
@@ -145,7 +145,6 @@ export default function SoftwareMedidaLanding() {
                   { n: '05', t: 'Entrega y traspaso', d: 'Código, arquitectura y manuales son tuyos. Soberanía total.' }
                 ].map((item, i) => (
                   <li key={i} className="flex gap-6">
-                    <span className="font-mono text-accent text-sm opacity-50">{item.n}</span>
                     <div>
                       <h5 className="font-bold text-ghost-w text-sm uppercase mb-1">{item.t}</h5>
                       <p className="text-xs text-smoke-m leading-relaxed">{item.d}</p>
@@ -164,7 +163,7 @@ export default function SoftwareMedidaLanding() {
           <div className="section-label">Cómo funciona</div>
           <h2 className="section-title">Cinco etapas. Un sistema que es tuyo.</h2>
           <p className="text-smoke-l mb-12">Duración estimada: <strong>8 a 16 semanas</strong> según complejidad.</p>
-          <div className="timeline">
+          <div className="timeline-premium">
             {[ 
               { n: '01', t: 'Relevamiento', d: 'Entendemos tu operación real.', s: 'Sem. 1-2' },
               { n: '02', t: 'Especificación', d: 'Arquitectura y criterios de aceptación.', s: 'Sem. 2-3' },
@@ -172,11 +171,16 @@ export default function SoftwareMedidaLanding() {
               { n: '04', t: 'QA contra Spec', d: 'Validación estricta contra la definición.', s: 'Sem. 12-14' },
               { n: '05', t: 'Entrega', d: 'Código, documentación y traspaso total.', s: 'Sem. 15-16' }
             ].map((step, i) => (
-              <div key={i} className="timeline-step">
-                <span className="step-num">{step.n}</span>
-                <h4 className="font-bold text-ghost-w mb-4 text-sm uppercase tracking-wider">{step.t}</h4>
-                <p className="text-xs text-smoke-m mb-6">{step.d}</p>
-                <div className="text-[10px] font-mono text-accent uppercase">{step.s}</div>
+              <div key={i} className="timeline-step-premium">
+                <div className="timeline-marker-p">
+                  <div className="timeline-dot-p">{step.n}</div>
+                  <div className="timeline-line-p"></div>
+                </div>
+                <div className="timeline-content-premium card-premium">
+                  <h4>{step.t}</h4>
+                  <p>{step.d}</p>
+                  <span className="step-tag">{step.s}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -241,33 +245,13 @@ export default function SoftwareMedidaLanding() {
                 </div>
               </div>
             </div>
-            <div className="bg-ink-2 p-8 rounded-xl border border-white/10">
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-[10px] uppercase text-smoke-m mb-2">Nombre</label>
-                    <input type="text" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] uppercase text-smoke-m mb-2">Email</label>
-                    <input type="email" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">¿En qué etapa está tu proyecto?</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded p-3 text-smoke-l focus:border-accent outline-none">
-                    <option>Es solo una idea</option>
-                    <option>Tengo un proceso manual que automatizar</option>
-                    <option>Tengo un sistema viejo/roto que reemplazar</option>
-                    <option>Otro</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">Breve descripción del sistema</label>
-                  <textarea className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none h-32"></textarea>
-                </div>
-                <button className="btn-primary w-full mt-4">Hablar de mi sistema →</button>
-              </form>
+            <div className="text-center lg:text-left">
+              <Link href="/contacto?asunto=Software a Medida" className="btn-premium-p py-6 px-12 text-xl">
+                Hablar de mi sistema →
+              </Link>
+              <p className="text-smoke-m text-xs mt-6 opacity-60">
+                Respuesta en menos de 24 horas hábiles.
+              </p>
             </div>
           </div>
         </div>

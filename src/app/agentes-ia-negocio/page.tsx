@@ -30,10 +30,10 @@ export default function AIAgentsLanding() {
             Diseñamos e implementamos agentes de IA entrenados en tu operación. No herramientas genéricas: sistemas que conocen tu negocio y trabajan solos.
           </p>
           <div className="hero-actions">
-            <Link href="#contacto" className="btn-primary">
+            <Link href="/contacto?asunto=Agentes IA" className="btn-premium-p">
               Mapear mi proceso
             </Link>
-            <Link href="#que-es" className="btn-ghost">
+            <Link href="#que-es" className="btn-premium-g">
               ¿Qué es un agente IA?
             </Link>
           </div>
@@ -99,7 +99,7 @@ export default function AIAgentsLanding() {
                 ))}
               </div>
             </div>
-            <div className="glass-card">
+            <div className="glass-card card-premium">
               <p className="text-accent font-mono text-xs mb-6 uppercase tracking-widest">El impacto real</p>
               <h3 className="text-2xl font-bold mb-6 text-ghost-w">Conectar la IA al proceso es la clave.</h3>
               <p className="text-smoke-l mb-8">No busques transformar todo. Buscamos el 30% del día que es puro trabajo repetitivo.</p>
@@ -124,6 +124,7 @@ export default function AIAgentsLanding() {
           <div className="section-label">Casos de Uso</div>
           <h2 className="section-title">Qué procesos resuelve un agente</h2>
           <div className="grid md:grid-cols-3 gap-6">
+            {/* Casos mapping... */}
             {[ 
               { rubro: 'Bodega / Exportadora', title: 'Pedidos entrantes', desc: 'Verifica stock, genera remito y responde al cliente.', icon: '🍷', result: '4h vs 3 días' },
               { rubro: 'Agroindustria', title: 'Partes de producción', desc: 'Consolida datos de turnos y genera reportes automáticos.', icon: '🏭', result: '2h manuales/turno eliminadas' },
@@ -132,7 +133,7 @@ export default function AIAgentsLanding() {
               { rubro: 'Salud', title: 'Gestión de Turnos', desc: 'Confirma, recuerda y reasigna cancelaciones.', icon: '🏥', result: '30% menos ausentismo' },
               { rubro: 'Cualquier Rubro', title: 'Reportes Automáticos', desc: 'Genera y distribuye informes sin pedido manual.', icon: '📊', result: '0h carga manual' }
             ].map((item, i) => (
-              <div key={i} className="glass-card flex flex-col h-full">
+              <div key={i} className="glass-card card-premium flex flex-col h-full">
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <div className="text-[10px] text-accent font-mono uppercase tracking-widest mb-2">{item.rubro}</div>
                 <h4 className="font-bold text-lg mb-3 text-ghost-w">{item.title}</h4>
@@ -232,28 +233,13 @@ export default function AIAgentsLanding() {
                 </div>
               </div>
             </div>
-            <div className="glass-card p-8 bg-ink-2">
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-[10px] uppercase text-smoke-m mb-2">Nombre</label>
-                    <input type="text" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                  </div>
-                  <div>
-                    <label className="block text-[10px] uppercase text-smoke-m mb-2">Empresa</label>
-                    <input type="text" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">Email</label>
-                  <input type="email" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">¿Qué proceso querés automatizar?</label>
-                  <textarea className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none h-32" placeholder="Ej: Procesamiento de pedidos por WhatsApp..."></textarea>
-                </div>
-                <button className="btn-primary w-full mt-4">Solicitar Mapeo Inicial →</button>
-              </form>
+            <div className="text-center lg:text-left">
+              <Link href="/contacto?asunto=Agentes IA" className="btn-premium-p py-6 px-12 text-xl">
+                Solicitar Mapeo Inicial →
+              </Link>
+              <p className="text-smoke-m text-xs mt-6 opacity-60">
+                Respuesta en menos de 24 horas hábiles.
+              </p>
             </div>
           </div>
         </div>

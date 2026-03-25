@@ -224,6 +224,215 @@ section {
   color: var(--electric-l);
 }
 
+/* ── PREMIUM UTILITIES ── */
+.btn-premium-p {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: var(--gradient-cta);
+  color: #fff;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(26, 191, 191, 0.2);
+  text-decoration: none;
+}
+
+.btn-premium-p:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(26, 191, 191, 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-premium-p:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-premium-g {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.9rem;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-premium-g:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--electric);
+  color: var(--electric-l);
+  transform: translateY(-1px);
+}
+
+/* Glassmorphism Cards */
+.card-premium {
+  background: rgba(21, 28, 31, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-premium::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient-cta);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-premium:hover {
+  border-color: rgba(26, 191, 191, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-premium:hover::after {
+  opacity: 1;
+}
+
+/* Premium Lists */
+.list-premium {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.list-premium li {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--gray-1);
+  line-height: 1.5;
+}
+
+.list-premium li::before {
+  content: '→';
+  color: var(--electric);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Premium Timeline */
+.timeline-premium {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-step-premium {
+  display: flex;
+  gap: 2.5rem;
+  position: relative;
+  padding-bottom: 3.5rem;
+}
+
+.timeline-step-premium:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  position: relative;
+  align-self: stretch; /* Ensure it fills the step height */
+}
+
+.timeline-dot-p {
+  width: 3rem;
+  height: 3rem;
+  background: var(--ink-2);
+  border: 2px solid var(--electric);
+  color: var(--electric-xl);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(26, 191, 191, 0.25);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.timeline-step-premium.active .timeline-dot-p {
+  background: var(--electric);
+  color: var(--ink);
+  box-shadow: 0 0 25px rgba(26, 191, 191, 0.5);
+}
+
+.timeline-line-p {
+  flex-grow: 1;
+  width: 2px;
+  background: var(--electric);
+  margin-top: 0.5rem;
+  opacity: 0.4;
+  z-index: 5;
+}
+
+.timeline-step-premium:last-child .timeline-line-p {
+  display: none;
+}
+
+.timeline-content-premium {
+  padding-top: 0.4rem;
+  flex: 1;
+}
+
+.timeline-content-premium h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-content-premium p {
+  color: var(--gray-2);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.timeline-content-premium .step-tag {
+  display: inline-block;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--electric-l);
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    NAVBAR
    ═══════════════════════════════════════════════════════════════ */

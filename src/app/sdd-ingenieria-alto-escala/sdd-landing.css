@@ -192,33 +192,7 @@
 .sdd-landing-root .hmt-n   { background: rgba(255,255,255,0.03); color: rgba(240,237,232,0.3); border: 1px solid var(--border-w); }
 
 .sdd-landing-root .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
-.sdd-landing-root .btn-main-sdd {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: .03em;
-  background: var(--turquesa);
-  color: var(--void);
-  padding: 13px 26px;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: background .15s, transform .1s;
-  display: inline-block; cursor: pointer; border: none;
-}
-.sdd-landing-root .btn-main-sdd:hover { background: #12AAAA; transform: translateY(-1px); }
-.sdd-landing-root .btn-ghost-sdd {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px; font-weight: 600;
-  letter-spacing: .03em;
-  background: transparent;
-  color: rgba(240,237,232,0.45);
-  padding: 13px 26px;
-  text-decoration: none;
-  border-radius: 2px;
-  border: 1px solid var(--border-w);
-  transition: border-color .15s, color .15s;
-  display: inline-block; cursor: pointer;
-}
-.sdd-landing-root .btn-ghost-sdd:hover { border-color: var(--border-m); color: var(--cuarzo); }
+/* Redundant button styles removed */
 
 /* Terminal hero panel */
 .sdd-landing-root .hero-terminal {
@@ -406,14 +380,7 @@
   letter-spacing: .1em;
   padding: 2px 0;
 }
-.sdd-landing-root .agent-card {
-  background: var(--surface);
-  border: 1px solid var(--border-w);
-  border-radius: 3px;
-  padding: 1.2rem 1.4rem;
-  position: relative;
-}
-.sdd-landing-root .agent-card.active { border-color: rgba(25,191,191,0.25); }
+/* Agent card basics handled by card-premium... */
 .sdd-landing-root .agent-card.output { border-color: rgba(194,137,42,0.25); }
 .sdd-landing-root .ac-header {
   display: flex;
@@ -655,41 +622,7 @@
 /* ─── PROCESO ─── */
 .sdd-landing-root .proceso { background: var(--basalto); }
 
-.sdd-landing-root .proc-track {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0;
-  border: 1px solid var(--border-w);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 3rem;
-}
-.sdd-landing-root .pt-step {
-  padding: 1.4rem;
-  border-right: 1px solid var(--border-w);
-  background: var(--void);
-  position: relative;
-}
-.sdd-landing-root .pt-step:last-child { border-right: none; }
-.sdd-landing-root .pt-step.active { background: var(--surface); }
-.sdd-landing-root .pt-step.highlight { background: rgba(25,191,191,0.05); border-color: rgba(25,191,191,0.15); }
-.sdd-landing-root .pt-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(240,237,232,0.2); margin-bottom: .6rem;
-}
-.sdd-landing-root .pt-step.highlight .pt-num { color: var(--turquesa); }
-.sdd-landing-root .pt-name {
-  font-family: 'Syne', sans-serif;
-  font-size: .88rem; font-weight: 700;
-  color: var(--cuarzo); margin-bottom: .3rem; line-height: 1.2;
-}
-.sdd-landing-root .pt-dur {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; color: var(--ocre); letter-spacing: .06em;
-  margin-bottom: .5rem;
-}
-.sdd-landing-root .pt-desc { font-size: .78rem; color: rgba(240,237,232,0.38); line-height: 1.5; }
+/* Redundant proc-track styles removed */
 
 .sdd-landing-root .proc-details { display: flex; flex-direction: column; gap: 1px; background: var(--border-w); border: 1px solid var(--border-w); border-radius: 3px; overflow: hidden; }
 .sdd-landing-root .pd-card {

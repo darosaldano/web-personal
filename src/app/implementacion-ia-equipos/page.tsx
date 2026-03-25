@@ -30,10 +30,10 @@ export default function IATeamsLanding() {
             Diseñamos e implementamos el proceso de adopción real: herramientas, flujos, mentalidad. No un taller de ChatGPT. Un cambio que se sostiene.
           </p>
           <div className="hero-cta-group">
-            <Link href="#contacto" className="btn-primary">
+            <Link href="/contacto?asunto=IA Equipos" className="btn-premium-p">
               Evaluar mi equipo
             </Link>
-            <Link href="#proceso" className="btn-ghost">
+            <Link href="#proceso" className="btn-premium-g">
               Ver el proceso
             </Link>
           </div>
@@ -94,38 +94,25 @@ export default function IATeamsLanding() {
                 </div>
               </div>
             </div>
-            <div className="glass-card bg-ink-3">
+            <div className="glass-card card-premium bg-ink-3">
               <p className="text-accent text-xs tracking-widest uppercase mb-8">Ciclo de abandono silencioso</p>
-              <div className="timeline">
-                <div className="timeline-item">
-                  <div className="timeline-marker">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-line"></div>
+              <div className="timeline-premium">
+                {[
+                  { num: '01', title: 'Semana 1 — Entusiasmo', desc: 'El equipo prueba la herramienta. Hay sorpresa y curiosidad genuinas.' },
+                  { num: '02', title: 'Semana 2–3 — Dispersión', desc: 'Sin guía de uso, cada persona improvisa. Los resultados son inconsistentes.' },
+                  { num: '03', title: 'Mes 2 — Abandono silencioso', desc: 'El uso cae sin que nadie lo anuncie. La licencia sigue activa. El ROI es invisible.' }
+                ].map((step, i) => (
+                  <div key={i} className="timeline-step-premium">
+                    <div className="timeline-marker-p">
+                      <div className="timeline-dot-p">{step.num}</div>
+                      <div className="timeline-line-p"></div>
+                    </div>
+                    <div className="timeline-content-premium">
+                      <h4 className="text-sm">{step.title}</h4>
+                      <p className="text-xs">{step.desc}</p>
+                    </div>
                   </div>
-                  <div className="timeline-content">
-                    <h4>Semana 1 — Entusiasmo</h4>
-                    <p className="text-sm text-smoke-m">El equipo prueba la herramienta. Hay sorpresa y curiosidad genuinas.</p>
-                  </div>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-marker">
-                    <div className="timeline-dot opacity-50"></div>
-                    <div className="timeline-line"></div>
-                  </div>
-                  <div className="timeline-content">
-                    <h4>Semana 2–3 — Dispersión</h4>
-                    <p className="text-sm text-smoke-m">Sin guía de uso, cada persona improvisa. Los resultados son inconsistentes.</p>
-                  </div>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-marker">
-                    <div className="timeline-dot opacity-20"></div>
-                  </div>
-                  <div className="timeline-content">
-                    <h4>Mes 2 — Abandono silencioso</h4>
-                    <p className="text-sm text-smoke-m">El uso cae sin que nadie lo anuncie. La licencia sigue activa. El ROI es invisible.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -147,11 +134,11 @@ export default function IATeamsLanding() {
               <p className="text-smoke-l text-lg leading-relaxed mb-8">
                 Primero definimos qué significa "usar bien" la IA en ese contexto. Luego entrenamos al equipo en ese estándar específico. Luego medimos. Ese proceso es exactamente lo que implementamos.
               </p>
-              <Link href="#contacto" className="btn-primary">
+              <Link href="/contacto?asunto=IA Equipos" className="btn-premium-p">
                 Evaluar mi equipo →
               </Link>
             </div>
-            <div className="glass-card border-accent/20 p-8">
+            <div className="glass-card card-premium border-accent/20 p-8">
               <p className="text-accent text-xs tracking-widest uppercase mb-6">Caso real · Mercado Libre · 2024–2025</p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="metric">
@@ -193,7 +180,7 @@ export default function IATeamsLanding() {
               { num: '05', title: 'Acompañamiento post (30d)', desc: 'Estamos disponibles durante los primeros 30 días para resolver dudas y consolidar el hábito.' },
               { num: '+', title: 'Garantía de adopción', desc: 'Si no alcanzan el 80% de uso cotidiano, el acompañamiento se extiende sin costo.', highlight: true }
             ].map((item, i) => (
-              <div key={i} className={`glass-card ${item.highlight ? 'border-accent/30 bg-accent/5' : ''}`}>
+              <div key={i} className={`glass-card card-premium ${item.highlight ? 'border-accent/30 bg-accent/5' : ''}`}>
                 <div className="text-accent font-mono text-sm mb-4">{item.num}</div>
                 <h4 className="font-bold text-lg mb-2 text-ghost-w">{item.title}</h4>
                 <p className="text-sm text-smoke-m leading-relaxed">{item.desc}</p>
@@ -264,30 +251,13 @@ export default function IATeamsLanding() {
                 Garantía de adopción por contrato
               </div>
             </div>
-            <div className="glass-card p-8">
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">Nombre</label>
-                  <input type="text" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">Email corporativo</label>
-                  <input type="email" className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none" />
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">Tamaño del equipo</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none">
-                    <option>1-5 personas</option>
-                    <option>6-15 personas</option>
-                    <option>+15 personas</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-[10px] uppercase text-smoke-m mb-2">Mensaje</label>
-                  <textarea className="w-full bg-white/5 border border-white/10 rounded p-3 text-white focus:border-accent outline-none h-32"></textarea>
-                </div>
-                <button className="btn-primary w-full mt-4">Evaluar mi equipo →</button>
-              </form>
+            <div className="text-center lg:text-left">
+              <Link href="/contacto?asunto=IA Equipos" className="btn-premium-p py-6 px-12 text-xl">
+                Empezar evaluación ahora →
+              </Link>
+              <p className="text-smoke-m text-xs mt-6 opacity-60">
+                Respondo personalmente en menos de 24hs hábiles.
+              </p>
             </div>
           </div>
         </div>

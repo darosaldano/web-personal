@@ -148,42 +148,7 @@
 }
 
 /* Timeline */
-.software-medida-landing .timeline {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    margin-top: 4rem;
-}
-
-@media (max-width: 960px) {
-    .software-medida-landing .timeline {
-        grid-template-columns: 1fr;
-    }
-}
-
-.software-medida-landing .timeline-step {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.software-medida-landing .timeline-step:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-}
-
-.software-medida-landing .step-num {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.05);
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-}
+/* Legacy timeline styles removed */
 
 /* Audiencia Grid */
 .software-medida-landing .audiencia-grid {

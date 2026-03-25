@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import './sdd-landing.css';
 
@@ -53,8 +54,8 @@ export default function SDDLandingPage() {
               </div>
 
               <div className="hero-ctas">
-                <a className="btn-main-sdd" href="#sistema">Ver el sistema multiagente</a>
-                <a className="btn-ghost-sdd" href="#metricas">Cómo se cumplen las métricas</a>
+                <a className="btn-premium-p" href="/contacto?asunto=SDD Engineering">Hablar de mi equipo</a>
+                <a className="btn-premium-g" href="#sistema" style={{marginLeft: '1rem'}}>Ver el sistema multiagente</a>
               </div>
             </div>
 
@@ -92,23 +93,23 @@ export default function SDDLandingPage() {
         </div>
 
         <div className="hero-stats-sdd">
-          <div className="hs-item-sdd">
+          <div className="hs-item-sdd card-premium">
             <div className="hs-num tq">90%+</div>
             <div className="hs-label">objetivo real de código generado con IA. El 70% es el piso mínimo.</div>
           </div>
-          <div className="hs-item-sdd">
+          <div className="hs-item-sdd card-premium">
             <div className="hs-num green">95%+</div>
             <div className="hs-label">cobertura de tests validada por el agente QA antes de cada PR</div>
           </div>
-          <div className="hs-item-sdd">
+          <div className="hs-item-sdd card-premium">
             <div className="hs-num tq">99%+</div>
             <div className="hs-label">uptime alcanzable con arquitectura correcta y observabilidad integrada</div>
           </div>
-          <div className="hs-item-sdd">
+          <div className="hs-item-sdd card-premium">
             <div className="hs-num green">&lt;200ms</div>
             <div className="hs-label">p99 de respuesta sostenible en 100k+ RPM con patrones de diseño correctos</div>
           </div>
-          <div className="hs-item-sdd">
+          <div className="hs-item-sdd card-premium">
             <div className="hs-num tq">16+</div>
             <div className="hs-label">años en ingeniería de software en producción real a escala</div>
           </div>
@@ -130,9 +131,9 @@ export default function SDDLandingPage() {
           </p>
 
           <div className="brecha-grid">
-            <div className="bg-cell">
+            <div className="bg-cell card-premium">
               <div className="bgc-label bad">Sin SDD — patrón que falla <span>modo actual</span></div>
-              <div className="bgc-items">
+              <div className="bgc-items list-premium">
                 <div className="bgc-item">
                   <span className="bgci-icon">⚡</span>
                   <div className="bgci-text">
@@ -164,9 +165,9 @@ export default function SDDLandingPage() {
               </div>
             </div>
 
-            <div className="bg-cell">
+            <div className="bg-cell card-premium">
               <div className="bgc-label good">Con SDD + Multiagente — patrón que funciona <span>objetivo</span></div>
-              <div className="bgc-items">
+              <div className="bgc-items list-premium">
                 <div className="bgc-item">
                   <span className="bgci-icon">📋</span>
                   <div className="bgci-text">
@@ -199,7 +200,7 @@ export default function SDDLandingPage() {
             </div>
           </div>
 
-          <div className="brecha-stat">
+          <div className="brecha-stat card-premium">
             <div className="bst-num">&lt;30%</div>
             <div className="bst-text">
               <strong>Porcentaje de uso real de IA en equipos sin metodología estructurada.</strong>
@@ -226,7 +227,7 @@ export default function SDDLandingPage() {
           <div className="ma-layout">
             <div className="agent-stack">
               {/* Agentes... */}
-              <div className="agent-card active">
+              <div className="agent-card active card-premium">
                 <div className="ac-header">
                   <span className="ac-num">AGENTE BASE · 01</span>
                   <span className="ac-name">Especificación</span>
@@ -245,7 +246,7 @@ export default function SDDLandingPage() {
                 </div>
               </div>
               <div className="as-connector">↓ según complejidad: uno o más agentes intermedios ↓</div>
-              <div className="agent-card active" style={{ border: '1px dashed rgba(25,191,191,0.2)', background: 'rgba(25,191,191,0.02)' }}>
+              <div className="agent-card active card-premium" style={{ border: '1px dashed rgba(25,191,191,0.2)', background: 'rgba(25,191,191,0.02)' }}>
                 <div className="ac-header">
                   <span className="ac-num">AGENTES OPCIONALES</span>
                   <span className="ac-name">Según la complejidad de la tarea</span>
@@ -262,10 +263,11 @@ export default function SDDLandingPage() {
                   <span className="act">preparación de despliegue</span>
                   <span className="act">documentación técnica</span>
                   <span className="act">revisión de performance</span>
+                  <span className="act">análisis de logs y trazas</span>
                 </div>
               </div>
               <div className="as-connector">↓ agente de ejecución ↓</div>
-              <div className="agent-card active">
+              <div className="agent-card active card-premium">
                 <div className="ac-header">
                   <span className="ac-num">AGENTE BASE · 02</span>
                   <span className="ac-name">Generación de código</span>
@@ -284,7 +286,7 @@ export default function SDDLandingPage() {
                 </div>
               </div>
               <div className="as-connector">↓ validación ↓</div>
-              <div className="agent-card active">
+              <div className="agent-card active card-premium">
                 <div className="ac-header">
                   <span className="ac-num">AGENTE BASE · 03</span>
                   <span className="ac-name">Validación de criterios</span>
@@ -303,7 +305,7 @@ export default function SDDLandingPage() {
                 </div>
               </div>
               <div className="as-connector">──── PR listo para reviewer ────</div>
-              <div className="agent-card output">
+              <div className="agent-card output card-premium">
                 <div className="ac-header">
                   <span className="ac-num">OUTPUT</span>
                   <span className="ac-name">PR listo para reviewer humano</span>
@@ -366,43 +368,27 @@ export default function SDDLandingPage() {
             La adopción de SDD en un equipo no es una migración de herramientas. Es un cambio en el orden en que se hace el trabajo. El proceso está diseñado para que el equipo lo incorpore como hábito mientras sigue entregando, sin freezar sprints ni crear deuda de proceso.
           </p>
 
-          <div className="proc-track" style={{ gridTemplateColumns: 'repeat(6, 1fr)' }}>
-            <div className="pt-step active">
-              <div className="pt-num">01 · Auditoría</div>
-              <div className="pt-name">Flujo actual de IA</div>
-              <div className="pt-dur">Sem. 1</div>
-              <div className="pt-desc">Cómo usa IA el equipo hoy, dónde se rechazan PRs, dónde produce alucinaciones y errores que llegan a producción.</div>
-            </div>
-            <div className="pt-step active">
-              <div className="pt-num">02 · Relevamiento</div>
-              <div className="pt-name">Arquitectura y protocolos</div>
-              <div className="pt-dur">Sem. 2</div>
-              <div className="pt-desc">Arquitectura, funcionalidades, stack, estructura de desarrollo, patrones y protocolos del equipo.</div>
-            </div>
-            <div className="pt-step highlight">
-              <div className="pt-num">03 · Configuración</div>
-              <div className="pt-name">Agentes y herramientas</div>
-              <div className="pt-dur">Sem. 3</div>
-              <div className="pt-desc">Cursor / Windsurf / Antigravity con reglas del proyecto, MCPs, Skills y templates de spec por stack.</div>
-            </div>
-            <div className="pt-step active">
-              <div className="pt-num">04 · Piloto</div>
-              <div className="pt-name">Tarea real con SDD</div>
-              <div className="pt-dur">Sem. 4</div>
-              <div className="pt-desc">Ciclo completo en una tarea real del sprint. Iterar hasta que el pipeline pase en primer ciclo consistentemente.</div>
-            </div>
-            <div className="pt-step active">
-              <div className="pt-num">05 · Adopción</div>
-              <div className="pt-name">Todo el equipo</div>
-              <div className="pt-dur">Sem. 5</div>
-              <div className="pt-desc">Capacitación del equipo completo. Cualquier miembro puede ejecutar el pipeline de principio a fin.</div>
-            </div>
-            <div className="pt-step">
-              <div className="pt-num">06 · Métricas</div>
-              <div className="pt-name">Ajuste y optimización</div>
-              <div className="pt-dur">Sem. 6–8</div>
-              <div className="pt-desc">% de código IA por PR, tasa de primer-pass, tiempo de ciclo. Ajuste del sistema según datos reales.</div>
-            </div>
+          <div className="timeline-premium mt-12">
+            {[
+              { num: '01', title: 'Auditoría', dur: 'Sem. 1', desc: 'Cómo usa IA el equipo hoy, dónde se rechazan PRs, dónde produce alucinaciones y errores que llegan a producción.' },
+              { num: '02', title: 'Relevamiento', dur: 'Sem. 2', desc: 'Arquitectura, funcionalidades, stack, estructura de desarrollo, patrones y protocolos del equipo.' },
+              { num: '03', title: 'Configuración', dur: 'Sem. 3', desc: 'Cursor / Windsurf / Antigravity con reglas del proyecto, MCPs, Skills y templates de spec por stack.', highlight: true },
+              { num: '04', title: 'Piloto', dur: 'Sem. 4', desc: 'Ciclo completo en una tarea real del sprint. Iterar hasta que el pipeline pase en primer ciclo consistentemente.' },
+              { num: '05', title: 'Adopción', dur: 'Sem. 5', desc: 'Capacitación del equipo completo. Cualquier miembro puede ejecutar el pipeline de principio a fin.' },
+              { num: '06', title: 'Métricas', dur: 'Sem. 6–8', desc: 'Porcentaje de código IA por PR, tasa de primer-pass, tiempo de ciclo. Ajuste del sistema según datos reales.' }
+            ].map((step, i) => (
+              <div key={i} className={`timeline-step-premium ${step.highlight ? 'active' : ''}`}>
+                <div className="timeline-marker-p">
+                  <div className="timeline-dot-p">{step.num}</div>
+                  <div className="timeline-line-p"></div>
+                </div>
+                <div className="timeline-content-premium card-premium">
+                  <h4>{step.title}</h4>
+                  <p>{step.desc}</p>
+                  <span className="step-tag">{step.dur}</span>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="proc-details">
@@ -503,9 +489,9 @@ export default function SDDLandingPage() {
           <div className="rule-sdd"></div>
 
           <div className="aud-grid">
-            <div className="aud-panel dark">
+            <div className="aud-panel card-premium dark">
               <div className="aud-header si">// tiene sentido si</div>
-              <div className="aud-items">
+              <div className="aud-items list-premium">
                 <div className="aud-item">
                   <span className="aud-ic si">✓</span>
                   <span>Tu equipo tiene la exigencia de <strong>superar el 70% de código generado con IA</strong> y hoy está estancado entre 20% y 40% porque el flujo sin estructura produce demasiados rechazos o alucinaciones que llegan a producción.</span>
@@ -566,7 +552,7 @@ export default function SDDLandingPage() {
           <div className="rule-sdd"></div>
 
           <div className="gar-layout">
-            <div className="gar-main-card">
+            <div className="gar-main-card card-premium">
               <div className="gar-badge">Garantía de adopción medible</div>
               <div className="gar-title">Si en la semana 6 el equipo no supera el 60% de código generado con IA con tasa de primer-pass en el pipeline de validación superior al 70%, continuamos el acompañamiento sin costo adicional hasta la semana 8.</div>
               <div className="gar-text">
@@ -731,20 +717,20 @@ export default function SDDLandingPage() {
             </div>
           </div>
 
-          <div className="cta-card">
+          <div className="cta-card card-premium">
             <div className="cta-card-header">
               <div className="cta-card-title">Primera sesión sin costo</div>
               <div className="cta-card-sub">30 min · Remoto · Sin compromiso</div>
             </div>
             <div className="cta-options">
-              <a className="co-opt" href="https://dariosaldano.com.ar/contacto" style={{ borderColor: 'rgba(25,191,191,0.3)', background: 'rgba(25,191,191,0.05)' }}>
+              <Link className="co-opt" href="/contacto?asunto=SDD Engineering" style={{ borderColor: 'rgba(25,191,191,0.3)', background: 'rgba(25,191,191,0.05)' }}>
                 <span className="co-icon">💬</span>
                 <div className="co-info">
                   <span className="co-name" style={{ color: 'var(--turquesa)' }}>Hablar sobre mi equipo</span>
                   <span className="co-sub">dariosaldano.com.ar/contacto</span>
                 </div>
                 <span className="co-arr" style={{ color: 'var(--turquesa)', fontSize: '16px' }}>→</span>
-              </a>
+              </Link>
             </div>
             <div className="cta-card-footer">Sin propuesta automática · Sin demo enlatada · Primera sesión sin costo</div>
           </div>

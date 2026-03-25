@@ -124,11 +124,6 @@
     color: var(--smoke-m);
 }
 
-/* Sections */
-.agentes-ia-landing .section {
-    padding: 8rem 0;
-}
-
 .agentes-ia-landing .bg-ink-2 { background-color: var(--ink-2); }
 
 .agentes-ia-landing .section-label {
@@ -147,20 +142,7 @@
     margin-bottom: 3rem;
 }
 
-/* Cards */
-.agentes-ia-landing .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 2.5rem;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.agentes-ia-landing .glass-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(26, 191, 191, 0.3);
-}
+/* Glass cards handled by premium-card... */
 
 /* Metric Strip */
 .agentes-ia-landing .metric-strip {
@@ -245,40 +227,15 @@
 }
 
 .agentes-ia-landing .col-premium {
-    background: rgba(26, 191, 191, 0.05);
+    background: rgba(26, 191, 191, 0.08);
     color: var(--accent);
-    font-weight: 500;
-}
-
-.agentes-ia-landing .btn-primary {
-    background: var(--accent);
-    color: var(--ink-1);
-    padding: 1rem 2.5rem;
-    border-radius: 6px;
     font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
 }
 
-.agentes-ia-landing .btn-primary:hover {
-    background: #fff;
-    transform: scale(1.05);
-}
-
+/* Button overrides if needed, but we'll use btn-premium classes in JSX */
+.agentes-ia-landing .btn-primary,
 .agentes-ia-landing .btn-ghost {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 1rem 2.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.agentes-ia-landing .btn-ghost:hover {
-    border-color: var(--accent);
-    background: rgba(26, 191, 191, 0.05);
+    border: none;
+    background: none;
+    padding: 0;
 }

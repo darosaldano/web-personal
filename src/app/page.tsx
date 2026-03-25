@@ -101,7 +101,7 @@ export default function Home() {
           </p>
           <div className="card-grid">
 
-            {/* Service 1 */}
+            {/* Service 1 — SDD + IA para Equipos */}
             <Link href="/implementacion-ia-equipos" className="svc-card special-card">
               <div className="svc-icon gold">📐</div>
               <div className="svc-title">SDD + IA para Equipos de Desarrollo</div>
@@ -118,39 +118,7 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Service 2 */}
-            <div className="svc-card">
-              <div className="svc-icon mint">🤝</div>
-              <div className="svc-title">Liderazgo con Propósito</div>
-              <p className="svc-desc">
-                Programas para líderes y aspirantes a líderes que quieren construir equipos de alto rendimiento con cultura sólida y valores claros. El liderazgo transformacional construye equipos que funcionan cuando el líder no está, y ese es el único tipo de equipo que escala de verdad
-              </p>
-              <ul className="svc-list">
-                <li>Formación de nuevos Líderes</li>
-                <li>Coaching Individual</li>
-                <li>Estructura de carrera técnica</li>
-              </ul>
-              <div className="svc-cta" style={{ color: 'var(--mint-l)' }}>
-                Explorar servicio <span>→</span>
-              </div>
-            </div>
-
-            {/* Service 3 */}
-            <div className="svc-card">
-              <div className="svc-icon">🧭</div>
-              <div className="svc-title">Consultoría Estratégica IT</div>
-              <p className="svc-desc">
-                Tenés una idea, un problema de negocio o un proceso que necesita digitalizarse. No sabés por dónde empezar, qué equipo armar ni cómo asegurarte de que el desarrollo vaya en la dirección correcta. Puedo llevar adelante el proyecto completo.
-              </p>
-              <ul className="svc-list">
-                <li>Relevamiento y especificación</li>
-                <li>Armado y liderazgo del equipo de desarrollo</li>
-                <li>Gestión del proyecto bajo metodología ágil</li>
-              </ul>
-              <div className="svc-cta">Explorar servicio <span>→</span></div>
-            </div>
-
-            {/* Service 4 — Blueprint */}
+            {/* Service 2 — Blueprint */}
             <Link href="/blueprint-automatizacion" className="svc-card special-card">
               <div className="svc-icon electric">⚡</div>
               <div className="svc-title">Blueprint de Automatización</div>
@@ -167,7 +135,7 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Service 5 — SDD Engineering */}
+            {/* Service 3 — SDD Engineering */}
             <Link href="/sdd-ingenieria-alto-escala" className="svc-card special-card">
               <div className="svc-icon">★</div>
               <div className="svc-title">SDD Ingeniería de Alto Escala</div>
@@ -184,7 +152,7 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Service 6 — Agentes IA */}
+            {/* Service 4 — Agentes IA */}
             <Link href="/agentes-ia-negocio" className="svc-card special-card">
               <div className="svc-icon electric">🤖</div>
               <div className="svc-title">Agentes de IA para tu Negocio</div>
@@ -201,7 +169,7 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Service 7 — Software a Medida */}
+            {/* Service 5 — Software a Medida */}
             <Link href="/software-a-medida" className="svc-card">
               <div className="svc-icon">🛠️</div>
               <div className="svc-title">Software a Medida desde Cero</div>
@@ -217,6 +185,23 @@ export default function Home() {
                 Ver Desarrollo <span>→</span>
               </div>
             </Link>
+
+            {/* Service 6 — Liderazgo con Propósito */}
+            <div className="svc-card">
+              <div className="svc-icon mint">🤝</div>
+              <div className="svc-title">Liderazgo con Propósito</div>
+              <p className="svc-desc">
+                Programas para líderes y aspirantes a líderes que quieren construir equipos de alto rendimiento con cultura sólida y valores claros. El liderazgo transformacional construye equipos que funcionan cuando el líder no está, y ese es el único tipo de equipo que escala de verdad
+              </p>
+              <ul className="svc-list">
+                <li>Formación de nuevos Líderes</li>
+                <li>Coaching Individual</li>
+                <li>Estructura de carrera técnica</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--mint-l)' }}>
+                Explorar servicio <span>→</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

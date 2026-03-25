@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import './blueprint-landing.css';
 
@@ -35,15 +36,15 @@ export default function BlueprintPage() {
           </p>
 
           <div className="hero-ctas">
-            <a href="#cta" className="btn-p">Quiero mi Blueprint</a>
-            <a href="#como-funciona" className="btn-g" style={{marginLeft: '1rem'}}>Ver cómo funciona</a>
+            <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p">Quiero mi Blueprint</Link>
+            <Link href="#como-funciona" className="btn-premium-g" style={{marginLeft: '1rem'}}>Ver cómo funciona</Link>
           </div>
         </div>
 
-        <div className="hero-card-bp">
+        <div className="hero-card-bp card-premium">
           <p className="hc-label">El documento incluye</p>
           <p className="hc-title">Blueprint de Automatización — 6 secciones ejecutables</p>
-          <ul className="hc-list">
+          <ul className="hc-list list-premium">
             <li>Diagnóstico de fricción operativa: dónde perdés tiempo y dinero hoy</li>
             <li>Priorización por retorno: qué automatizar primero y por qué ese orden</li>
             <li>Recomendación de herramienta ajustada a tu contexto real</li>
@@ -82,20 +83,20 @@ export default function BlueprintPage() {
             </div>
 
             <div className="friction-stack">
-              <div className="friction-item">
-                <p className="fi-title">El proceso crítico que nadie documentó</p>
+              <div className="friction-item card-premium">
+                <p className="fi-title text-accent">El proceso crítico que nadie documentó</p>
                 <p className="fi-desc">Existe en la cabeza de una sola persona. Si esa persona falta, el proceso se detiene.</p>
               </div>
-              <div className="friction-item">
-                <p className="fi-title">La herramienta equivocada para el problema correcto</p>
+              <div className="friction-item card-premium">
+                <p className="fi-title text-accent">La herramienta equivocada para el problema correcto</p>
                 <p className="fi-desc">Contrataste un CRM cuando lo que necesitabas era un flujo de aprobación o una app custom innecesaria.</p>
               </div>
-              <div className="friction-item">
-                <p className="fi-title">La inversión que nadie midió</p>
+              <div className="friction-item card-premium">
+                <p className="fi-title text-accent">La inversión que nadie midió</p>
                 <p className="fi-desc">Sabés cuánto costó el software. No sabés cuánto costó el tiempo de tu equipo aprendiendo a usarlo.</p>
               </div>
-              <div className="friction-item">
-                <p className="fi-title">El proveedor que quiere construir, no diagnosticar</p>
+              <div className="friction-item card-premium">
+                <p className="fi-title text-accent">El proveedor que quiere construir, no diagnosticar</p>
                 <p className="fi-desc">Toda agencia tiene incentivo en implementar. La consultoría previa que debería protegerte casi nunca existe.</p>
               </div>
             </div>
@@ -170,17 +171,23 @@ export default function BlueprintPage() {
             dos semanas.
           </h2>
 
-          <div className="timeline-bp">
+          <div className="timeline-premium mt-12">
             {[
-              { num: 1, title: 'Sesión de diagnóstico inicial', desc: '90 min remotos para entender el negocio y los puntos de dolor.' },
-              { num: 2, title: 'Relevamiento en profundidad', desc: 'Sesiones con las personas que ejecutan los procesos reales.' },
-              { num: 3, title: 'Análisis técnico y selección', desc: 'Trabajo interno de análisis estratégico y cruce de datos.' },
-              { num: 4, title: 'Entrega y sesión de revisión', desc: 'Entrega del Blueprint completo y alineación final.' },
-            ].map((step) => (
-              <div key={step.num} className="tl-step">
-                <div className="tl-num">{step.num}</div>
-                <p className="tl-title" style={{fontWeight: 700, marginTop: '1rem'}}>{step.title}</p>
-                <p className="tl-desc" style={{fontSize: '0.9rem', color: '#8E9A9E', marginTop: '0.5rem'}}>{step.desc}</p>
+              { num: '01', title: 'Sesión de diagnóstico inicial', desc: '90 min remotos para entender el negocio y los puntos de dolor.' },
+              { num: '02', title: 'Relevamiento en profundidad', desc: 'Sesiones con las personas que ejecutan los procesos reales.' },
+              { num: '03', title: 'Análisis técnico y selección', desc: 'Trabajo interno de análisis estratégico y cruce de datos.' },
+              { num: '04', title: 'Entrega y sesión de revisión', desc: 'Entrega del Blueprint completo y alineación final.' },
+            ].map((step, i) => (
+              <div key={i} className="timeline-step-premium">
+                <div className="timeline-marker-p">
+                  <div className="timeline-dot-p">{step.num}</div>
+                  <div className="timeline-line-p"></div>
+                </div>
+                <div className="timeline-content-premium card-premium">
+                  <h4>{step.title}</h4>
+                  <p>{step.desc}</p>
+                  <span className="step-tag">Fase {step.num}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -189,7 +196,7 @@ export default function BlueprintPage() {
             <p style={{fontSize: '1rem', color: '#DDD8D0'}}>
               <strong>Tiempo total: dos semanas.</strong> Dedicación del cliente: 4-6 horas.
             </p>
-            <a href="#cta" className="btn-p">Quiero empezar</a>
+            <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p">Quiero empezar</Link>
           </div>
         </div>
       </section>
@@ -317,13 +324,14 @@ export default function BlueprintPage() {
               </ul>
             </div>
 
-            <form className="form-bp">
-              <input type="text" placeholder="Nombre" required />
-              <input type="text" placeholder="Empresa o rubro" />
-              <input type="email" placeholder="Email" required />
-              <textarea placeholder="¿Qué proceso querés automatizar?" required></textarea>
-              <button type="submit">Quiero mapear mi proceso crítico</button>
-            </form>
+            <div className="form-bp" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
+              <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p" style={{padding: '1.5rem 3rem', fontSize: '1.2rem', width: '100%'}}>
+                Quiero mapear mi proceso crítico →
+              </Link>
+              <p style={{marginTop: '1.5rem', fontSize: '0.8rem', opacity: 0.6, color: '#DDD8D0'}}>
+                Respuesta en menos de 24 horas hábiles.
+              </p>
+            </div>
           </div>
         </div>
       </section>
