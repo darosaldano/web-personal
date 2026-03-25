@@ -7,8 +7,6 @@ const navItems = [
     { label: 'Inicio', href: '/#hero' },
     { label: 'Sobre Mí', href: '/#sobre-mi' },
     { label: 'Servicios', href: '/#servicios' },
-    { label: 'Blueprint ⚡', href: '/blueprint-automatizacion', special: true },
-    { label: 'SDD ★', href: '/sdd-ingenieria-alto-escala', special: true },
     { label: 'Proyectos', href: '/#proyectos' },
     { label: 'Blog', href: '/blog' },
 ];
@@ -39,7 +37,7 @@ export default function Navbar() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`nav-link${item.special ? ' special' : ''}`}
+                                className="nav-link"
                             >
                                 {item.label}
                             </Link>
@@ -71,7 +69,7 @@ export default function Navbar() {
                     <Link
                         key={item.href}
                         href={item.href}
-                        className={`nav-link${item.special ? ' special' : ''}`}
+                        className="nav-link"
                         onClick={() => setMobileOpen(false)}
                     >
                         {item.label}

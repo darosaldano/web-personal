@@ -94,7 +94,7 @@ export default function Home() {
       <section id="servicios" style={{ background: 'var(--ink-2)' }}>
         <div className="container">
           <div className="section-label">Servicios</div>
-          <h2 className="section-title">Tres pilares para <span>resultados reales</span></h2>
+          <h2 className="section-title">Pilares para <span>resultados reales</span></h2>
           <p className="section-subtitle">
             Cada servicio diseñado para resolver problemas reales de empresas, emprendedores, líderes y desarrolladores que
             necesitan escalar su tecnología sin perder el control.
@@ -104,9 +104,6 @@ export default function Home() {
             {/* Service 1 */}
             <div className="svc-card">
               <div className="svc-icon gold">📐</div>
-              <span className="svc-tag" style={{ color: 'var(--gold-xl)' }}>
-                Pilar 01 · Nueva Metodología
-              </span>
               <div className="svc-title">SDD + IA para Equipos de Desarrollo</div>
               <p className="svc-desc">
                 El problema más costoso en el desarrollo de software es construir lo incorrecto por no haber especificado correctamente. Esta metodología invierte el orden habitual: Primero se especifica con precisión, luego la IA genera el código base y el equipo valida y refina. Menos retrabajo, más velocidad, adopción de IA sin caos.
@@ -124,7 +121,6 @@ export default function Home() {
             {/* Service 2 */}
             <div className="svc-card">
               <div className="svc-icon mint">🤝</div>
-              <span className="svc-tag" style={{ color: 'var(--mint-l)' }}>Pilar 02</span>
               <div className="svc-title">Liderazgo con Propósito</div>
               <p className="svc-desc">
                 Programas para líderes y aspirantes a líderes que quieren construir equipos de alto rendimiento con cultura sólida y valores claros. El liderazgo transformacional construye equipos que funcionan cuando el líder no está, y ese es el único tipo de equipo que escala de verdad
@@ -142,7 +138,6 @@ export default function Home() {
             {/* Service 3 */}
             <div className="svc-card">
               <div className="svc-icon">🧭</div>
-              <span className="svc-tag">Pilar 03</span>
               <div className="svc-title">Consultoría Estratégica IT</div>
               <p className="svc-desc">
                 Tenés una idea, un problema de negocio o un proceso que necesita digitalizarse. No sabés por dónde empezar, qué equipo armar ni cómo asegurarte de que el desarrollo vaya en la dirección correcta. Puedo llevar adelante el proyecto completo.
@@ -154,6 +149,40 @@ export default function Home() {
               </ul>
               <div className="svc-cta">Explorar servicio <span>→</span></div>
             </div>
+
+            {/* Service 4 — Blueprint */}
+            <Link href="/blueprint-automatizacion" className="svc-card special-card">
+              <div className="svc-icon electric">⚡</div>
+              <div className="svc-title">Blueprint de Automatización</div>
+              <p className="svc-desc">
+                Diagnóstico técnico-estratégico antes de invertir en software. Mapeamos tus procesos críticos, definimos el stack correcto y estimamos el ROI real en solo dos semanas.
+              </p>
+              <ul className="svc-list">
+                <li>Diagnóstico de fricción</li>
+                <li>Priorización por retorno</li>
+                <li>Especificaciones SDD</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--electric-l)' }}>
+                Ver Diagnóstico <span>→</span>
+              </div>
+            </Link>
+
+            {/* Service 5 — SDD Engineering */}
+            <Link href="/sdd-ingenieria-alto-escala" className="svc-card special-card">
+              <div className="svc-icon">★</div>
+              <div className="svc-title">SDD Ingeniería de Alto Escala</div>
+              <p className="svc-desc">
+                Desarrollo de software de alta complejidad para proyectos que no pueden fallar. Arquitectura resiliente, equipos de alto rendimiento y metodología orientada a especificaciones.
+              </p>
+              <ul className="svc-list">
+                <li>Sistemas Críticos</li>
+                <li>Escalamiento Masivo</li>
+                <li>Auditoría de Arquitectura</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--electric-l)' }}>
+                Conocer SDD Engineering <span>→</span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
