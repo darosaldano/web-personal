@@ -183,6 +183,23 @@ export default function Home() {
                 Conocer SDD Engineering <span>→</span>
               </div>
             </Link>
+
+            {/* Service 6 — Agentes IA */}
+            <Link href="/agentes-ia-negocio" className="svc-card special-card">
+              <div className="svc-icon electric">🤖</div>
+              <div className="svc-title">Agentes de IA para tu Negocio</div>
+              <p className="svc-desc">
+                Sistemas que no solo responden, sino que trabajan. Atendé procesos críticos 24/7 sin intervención manual: desde pedidos hasta reportes gerenciales automáticos.
+              </p>
+              <ul className="svc-list">
+                <li>Mapeo de Procesos</li>
+                <li>Integración 24/7</li>
+                <li>Entrenamiento de Dominio</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--electric-l)' }}>
+                Ver Agentes <span>→</span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

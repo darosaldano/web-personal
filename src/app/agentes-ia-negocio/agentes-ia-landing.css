@@ -1,0 +1,284 @@
+.agentes-ia-landing {
+    --accent: var(--turquesa, #1ABFBF);
+    --accent-d: #0F8080;
+    --oxido: #C04830;
+    --ocre: #C2892A;
+    background-color: var(--ink-1);
+    color: var(--ghost-w);
+    font-family: 'Inter', sans-serif;
+}
+
+.agentes-ia-landing .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero */
+.agentes-ia-landing .hero {
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .agentes-ia-landing .hero {
+        grid-template-columns: 1fr;
+        padding: 6rem 0 4rem;
+    }
+}
+
+.agentes-ia-landing .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.agentes-ia-landing .hero-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.agentes-ia-landing .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.agentes-ia-landing .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.agentes-ia-landing .hero-sub {
+    font-size: 1.2rem;
+    color: var(--smoke-l);
+    max-width: 48ch;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* Flow Diagram */
+.agentes-ia-landing .flow-diagram {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.agentes-ia-landing .flow-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.agentes-ia-landing .flow-node {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agentes-ia-landing .flow-arrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.agentes-ia-landing .node-icon {
+    font-size: 1.5rem;
+}
+
+.agentes-ia-landing .node-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+.agentes-ia-landing .node-desc {
+    font-size: 0.75rem;
+    color: var(--smoke-m);
+}
+
+/* Sections */
+.agentes-ia-landing .section {
+    padding: 8rem 0;
+}
+
+.agentes-ia-landing .bg-ink-2 { background-color: var(--ink-2); }
+
+.agentes-ia-landing .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.agentes-ia-landing .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+}
+
+/* Cards */
+.agentes-ia-landing .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.agentes-ia-landing .glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(26, 191, 191, 0.3);
+}
+
+/* Metric Strip */
+.agentes-ia-landing .metric-strip {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agentes-ia-landing .metric-item .num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.agentes-ia-landing .metric-item .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--smoke-m);
+    margin-top: 0.5rem;
+}
+
+/* Audiencia Table */
+.agentes-ia-landing .audiencia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .agentes-ia-landing .audiencia-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.agentes-ia-landing .audiencia-col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.agentes-ia-landing .col-head {
+    padding: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.agentes-ia-landing .col-head.si { background: rgba(26, 191, 191, 0.1); color: var(--accent); }
+.agentes-ia-landing .col-head.no { background: rgba(192, 72, 48, 0.1); color: var(--oxido); }
+
+.agentes-ia-landing .audiencia-item {
+    padding: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Diferencial Table */
+.agentes-ia-landing .table-wrapper {
+    overflow-x: auto;
+    margin-top: 3rem;
+}
+
+.agentes-ia-landing table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.agentes-ia-landing th, .agentes-ia-landing td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agentes-ia-landing .col-premium {
+    background: rgba(26, 191, 191, 0.05);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.agentes-ia-landing .btn-primary {
+    background: var(--accent);
+    color: var(--ink-1);
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.agentes-ia-landing .btn-primary:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.agentes-ia-landing .btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.agentes-ia-landing .btn-ghost:hover {
+    border-color: var(--accent);
+    background: rgba(26, 191, 191, 0.05);
+}
