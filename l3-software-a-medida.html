@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software a medida desde cero · Sin código basura, con soberanía técnica · Darío Saldaño</title>
+<meta name="description" content="Desarrollo de software de gestión a medida con metodología SDD: especificación precisa antes de escribir una línea de código. Para agroindustrias, exportadoras y pymes en Argentina.">
+<meta name="keywords" content="software a medida Argentina, desarrollo sistema gestión pyme, sistema personalizado agroindustria, desarrollo software La Rioja, software gestión exportadora, SDD desarrollo ágil, sistema a medida Chilecito">
+<meta name="author" content="Darío Saldaño">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Darío Saldaño">
+<meta property="og:title" content="Software a medida desde cero · Sin código basura · Darío Saldaño">
+<meta property="og:description" content="Desarrollo de software con metodología SDD. Especificación precisa antes de construir. 60% menos retrabajo. Para pymes, exportadoras y agroindustrias en Argentina.">
+<link rel="canonical" href="https://dariosaldano.com.ar/software-a-medida">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Desarrollo de Software a Medida con Metodología SDD",
+  "provider": {
+    "@type": "Person",
+    "name": "Darío Saldaño",
+    "jobTitle": "Consultor en Automatización e IA",
+    "url": "https://dariosaldano.com.ar",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chilecito",
+      "addressRegion": "La Rioja",
+      "addressCountry": "AR"
+    }
+  },
+  "areaServed": ["Chilecito", "La Rioja", "Argentina", "LATAM"],
+  "description": "Desarrollo de sistemas de gestión a medida con Specs Driven Development (SDD). Especificación precisa antes de escribir código. Para agroindustrias, exportadoras y pymes que necesitan sistemas propios.",
+  "url": "https://dariosaldano.com.ar/software-a-medida"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════
+   SISTEMA DE DISEÑO MINERAL — VARIABLES BASE
+══════════════════════════════════════════════════ */
+:root {
+  --basalto:    #1E1C1A;
+  --pizarra:    #3A4A4E;
+  --pizarra-l:  #5E7A8A;
+  --turquesa:   #1ABFBF;
+  --turquesa-d: #0F8080;
+  --oxido:      #8B3520;
+  --oxido-l:    #C04830;
+  --ocre:       #C2892A;
+  --cuarzo:     #F0EDE8;
+  --cuarzo-d:   #D6D1C8;
+  --blanco:     #FAFAF8;
+  --muted:      #6A7E87;
+}
+
+/* ── RESET & BASE ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--blanco);
+  color: var(--basalto);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ── ANIMACIONES ──────────────────────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+.anim-1 { animation: slideUp 0.6s ease both; }
+.anim-2 { animation: slideUp 0.6s 0.12s ease both; }
+.anim-3 { animation: slideUp 0.6s 0.24s ease both; }
+.anim-4 { animation: slideUp 0.6s 0.36s ease both; }
+.anim-5 { animation: slideUp 0.6s 0.48s ease both; }
+
+/* ── TOPBAR STICKY ────────────────────────────── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cuarzo);
+  border-bottom: 1px solid var(--cuarzo-d);
+  padding: 0 5vw;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.4s ease both;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--basalto);
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.1;
+}
+.nav-logo-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--basalto);
+  letter-spacing: 0.04em;
+}
+.nav-logo-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.nav-cta {
+  background: var(--basalto);
+  color: var(--blanco);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--pizarra); }
+
+/* ── HERO ─────────────────────────────────────── */
+.hero {
+  background: var(--cuarzo);
+  padding: 6rem 5vw 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(26,191,191,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--cuarzo-d);
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--turquesa-d);
+  background: rgba(26,191,191,0.08);
+  border: 1px solid rgba(26,191,191,0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+  margin-bottom: 1.8rem;
+}
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--turquesa);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.hero-h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--basalto);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.hero-h1 em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--turquesa-d);
+}
+
+.hero-sub {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--pizarra);
+  line-height: 1.8;
+  max-width: 44ch;
+  margin-bottom: 2.5rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--basalto);
+  color: var(--blanco);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  border-radius: 3px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover {
+  background: var(--pizarra);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--pizarra);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--cuarzo-d);
+  transition: all 0.2s;
+}
+.btn-ghost:hover {
+  border-color: var(--pizarra);
+  color: var(--basalto);
+  background: rgba(58,74,78,0.04);
+}
+
+/* ── HERO VISUAL CARD ─────────────────────────── */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compare-card {
+  background: var(--blanco);
+  border: 1px solid var(--cuarzo-d);
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 2px 24px rgba(30,28,26,0.06);
+}
+.compare-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.compare-col-head {
+  padding: 0.9rem 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.compare-col-head.bad {
+  background: rgba(139,53,32,0.06);
+  color: var(--oxido);
+  border-bottom: 2px solid var(--oxido-l);
+}
+.compare-col-head.good {
+  background: rgba(26,191,191,0.07);
+  color: var(--turquesa-d);
+  border-bottom: 2px solid var(--turquesa);
+}
+.compare-rows { padding: 0.5rem 0; }
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--cuarzo-d);
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-cell {
+  padding: 0.75rem 1.2rem;
+  font-family: 'Lora', serif;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--pizarra);
+}
+.compare-cell.bad {
+  background: rgba(139,53,32,0.03);
+  color: var(--oxido);
+}
+.compare-cell.good {
+  color: var(--basalto);
+}
+.compare-cell.bad::before { content: '✕  '; opacity: 0.5; }
+.compare-cell.good::before { content: '✓  '; color: var(--turquesa-d); }
+
+/* ── SECCIÓN DOLOR ────────────────────────────── */
+.seccion-dolor {
+  padding: 7rem 5vw;
+  background: var(--blanco);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.seccion-dolor-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.dolor-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--oxido-l);
+  margin-bottom: 1rem;
+}
+.dolor-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--basalto);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+.dolor-h2 span {
+  display: block;
+  color: var(--oxido-l);
+}
+.dolor-prosa {
+  font-family: 'Lora', serif;
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: var(--pizarra);
+  margin-bottom: 1.5rem;
+}
+.dolor-prosa strong {
+  color: var(--basalto);
+  font-weight: 500;
+}
+
+.fricciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.friccion-item {
+  padding: 1.25rem 1.5rem;
+  background: var(--cuarzo);
+  border-left: 3px solid var(--oxido-l);
+  border-radius: 0 3px 3px 0;
+}
+.friccion-titulo {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--oxido);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+.friccion-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: var(--pizarra);
+}
+
+/* ── SEPARADOR ────────────────────────────────── */
+.separador {
+  height: 1px;
+  background: var(--cuarzo-d);
+  margin: 0 5vw;
+}
+
+/* ── PROPUESTA / SDD ──────────────────────────── */
+.seccion-propuesta {
+  background: var(--basalto);
+  padding: 7rem 5vw;
+  position: relative;
+  overflow: hidden;
+}
+.seccion-propuesta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--turquesa) 0%, var(--turquesa-d) 100%);
+}
+.seccion-propuesta::after {
+  content: 'SDD';
+  position: absolute;
+  right: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Syne', sans-serif;
+  font-size: 18vw;
+  font-weight: 800;
+  color: rgba(255,255,255,0.025);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+.propuesta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+.propuesta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--turquesa);
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+.propuesta-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--blanco);
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.02em;
+}
+.propuesta-h2 em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--turquesa);
+}
+.propuesta-prosa {
+  font-family: 'Lora', serif;
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: rgba(240,237,232,0.7);
+  margin-bottom: 1.5rem;
+}
+.propuesta-prosa strong {
+  color: var(--blanco);
+  font-weight: 500;
+}
+
+.sdd-metricas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.metrica-item {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.02);
+  transition: background 0.2s;
+}
+.metrica-item:hover { background: rgba(255,255,255,0.05); }
+.metrica-valor {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--turquesa);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.metrica-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.4);
+}
+
+.sdd-incluye {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 1.8rem;
+}
+.sdd-incluye-titulo {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--turquesa);
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+.sdd-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.sdd-item:last-child { border-bottom: none; padding-bottom: 0; }
+.sdd-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--turquesa);
+  opacity: 0.6;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.sdd-item-texto {
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(240,237,232,0.75);
+}
+.sdd-item-texto strong {
+  color: var(--blanco);
+  font-weight: 500;
+}
+
+/* ── PROCESO ──────────────────────────────────── */
+.seccion-proceso {
+  padding: 7rem 5vw;
+  background: var(--cuarzo);
+}
+.proceso-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.proceso-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.proceso-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--basalto);
+  margin-bottom: 0.7rem;
+  letter-spacing: -0.02em;
+}
+.proceso-sub {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 4rem;
+}
+.proceso-sub strong { color: var(--pizarra); }
+
+.proceso-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+}
+.proceso-timeline::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 44px;
+  right: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--turquesa) 0%, var(--cuarzo-d) 100%);
+  z-index: 0;
+}
+.paso {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  text-align: center;
+}
+.paso-circulo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--basalto);
+  border: 2px solid var(--turquesa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--turquesa);
+  transition: background 0.2s;
+}
+.paso:hover .paso-circulo {
+  background: var(--turquesa);
+  color: var(--basalto);
+}
+.paso-nombre {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--basalto);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.paso-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.paso-semana {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--turquesa-d);
+  background: rgba(26,191,191,0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.proceso-nota {
+  margin-top: 3.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--blanco);
+  border: 1px solid var(--cuarzo-d);
+  border-left: 4px solid var(--turquesa);
+  border-radius: 0 4px 4px 0;
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--pizarra);
+}
+.proceso-nota strong { color: var(--basalto); }
+
+/* ── PARA QUIÉN ES / NO ES ────────────────────── */
+.seccion-audiencia {
+  padding: 7rem 5vw;
+  background: var(--blanco);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.audiencia-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.audiencia-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--basalto);
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.02em;
+}
+.audiencia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--cuarzo-d);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.audiencia-col {
+  background: var(--cuarzo);
+  padding: 2.5rem;
+}
+.audiencia-col-head {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid;
+}
+.audiencia-col.si .audiencia-col-head {
+  color: var(--turquesa-d);
+  border-color: var(--turquesa);
+}
+.audiencia-col.no .audiencia-col-head {
+  color: var(--muted);
+  border-color: var(--cuarzo-d);
+}
+.audiencia-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+}
+.audiencia-item:last-child { margin-bottom: 0; }
+.audiencia-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+.audiencia-texto {
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--pizarra);
+}
+.audiencia-texto strong {
+  color: var(--basalto);
+  font-weight: 500;
+}
+
+/* ── SOBERANÍA TÉCNICA ────────────────────────── */
+.seccion-soberania {
+  padding: 7rem 5vw;
+  background: var(--cuarzo);
+  position: relative;
+  overflow: hidden;
+}
+.soberania-bg-texto {
+  position: absolute;
+  bottom: -30px;
+  left: 5vw;
+  font-family: 'Syne', sans-serif;
+  font-size: 20vw;
+  font-weight: 800;
+  color: rgba(30,28,26,0.03);
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.soberania-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.soberania-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 1rem;
+}
+.soberania-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--basalto);
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.02em;
+}
+.soberania-h2 em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ocre);
+}
+.soberania-prosa {
+  font-family: 'Lora', serif;
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: var(--pizarra);
+  margin-bottom: 1.5rem;
+}
+.soberania-prosa strong { color: var(--basalto); }
+
+.soberania-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--cuarzo-d);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.pillar-item {
+  background: var(--blanco);
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+.pillar-item:hover { background: #f4f1eb; }
+.pillar-icon-wrap {
+  width: 38px;
+  height: 38px;
+  background: rgba(194,137,42,0.1);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.pillar-titulo {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--basalto);
+  margin-bottom: 0.2rem;
+}
+.pillar-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ── COMPARATIVA ──────────────────────────────── */
+.seccion-comparativa {
+  padding: 7rem 5vw;
+  background: var(--blanco);
+}
+.comparativa-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.comparativa-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.comparativa-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--basalto);
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+.tabla-comparativa {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--cuarzo-d);
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+}
+.tabla-comparativa thead th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.tabla-comparativa thead th:first-child {
+  background: var(--cuarzo);
+  color: var(--muted);
+  width: 35%;
+}
+.tabla-comparativa thead th:nth-child(2) {
+  background: rgba(139,53,32,0.06);
+  color: var(--oxido);
+}
+.tabla-comparativa thead th:nth-child(3) {
+  background: rgba(26,191,191,0.08);
+  color: var(--turquesa-d);
+}
+.tabla-comparativa tbody tr { border-top: 1px solid var(--cuarzo-d); }
+.tabla-comparativa tbody tr:nth-child(even) td { background: rgba(240,237,232,0.3); }
+.tabla-comparativa tbody td {
+  padding: 0.9rem 1.5rem;
+  vertical-align: middle;
+  color: var(--pizarra);
+  line-height: 1.5;
+}
+.tabla-comparativa tbody td:first-child {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--basalto);
+  font-weight: 500;
+}
+.tabla-comparativa tbody td:nth-child(2) { color: var(--oxido); }
+.tabla-comparativa tbody td:nth-child(3) { color: var(--turquesa-d); font-weight: 500; }
+
+/* ── GARANTÍA ─────────────────────────────────── */
+.seccion-garantia {
+  padding: 5rem 5vw;
+  background: var(--cuarzo);
+  border-top: 1px solid var(--cuarzo-d);
+  border-bottom: 1px solid var(--cuarzo-d);
+}
+.garantia-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+.garantia-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(26,191,191,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.6rem;
+}
+.garantia-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--turquesa-d);
+  margin-bottom: 1rem;
+}
+.garantia-h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--basalto);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+.garantia-texto {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--pizarra);
+  font-style: italic;
+}
+.garantia-texto strong {
+  font-style: normal;
+  color: var(--basalto);
+}
+.garantia-nota {
+  margin-top: 1.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── FAQ ──────────────────────────────────────── */
+.seccion-faq {
+  padding: 7rem 5vw;
+  background: var(--blanco);
+}
+.faq-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.faq-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.faq-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--basalto);
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--cuarzo-d);
+}
+.faq-item:first-of-type { border-top: 1px solid var(--cuarzo-d); }
+
+.faq-pregunta {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+.faq-pregunta-texto {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--basalto);
+  line-height: 1.35;
+}
+.faq-chevron {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 1px solid var(--cuarzo-d);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--muted);
+  transition: all 0.25s;
+}
+.faq-item.open .faq-chevron {
+  background: var(--basalto);
+  color: var(--blanco);
+  border-color: var(--basalto);
+  transform: rotate(180deg);
+}
+.faq-respuesta {
+  display: none;
+  padding: 0 0 1.4rem;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--pizarra);
+}
+.faq-respuesta strong { color: var(--basalto); font-weight: 500; }
+.faq-item.open .faq-respuesta { display: block; }
+
+/* ── CTA FINAL ────────────────────────────────── */
+.seccion-cta {
+  background: var(--basalto);
+  padding: 7rem 5vw;
+  position: relative;
+  overflow: hidden;
+}
+.seccion-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--turquesa) 0%, transparent 100%);
+}
+.seccion-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(26,191,191,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+.cta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--turquesa);
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+.cta-h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--blanco);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.cta-h2 em {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--turquesa);
+}
+.cta-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: rgba(240,237,232,0.6);
+  margin-bottom: 2rem;
+}
+.cta-dato {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+.cta-dato-icon { color: var(--turquesa); flex-shrink: 0; font-size: 0.9rem; padding-top: 2px; }
+.cta-dato-texto {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(240,237,232,0.5);
+  line-height: 1.5;
+}
+
+/* Formulario */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.45);
+}
+.form-input,
+.form-textarea,
+.form-select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 3px;
+  color: var(--blanco);
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+.form-input::placeholder,
+.form-textarea::placeholder { color: rgba(240,237,232,0.25); }
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus { border-color: var(--turquesa); }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-select { -webkit-appearance: none; appearance: none; }
+.form-select option { background: var(--basalto); color: var(--blanco); }
+
+.btn-enviar {
+  background: var(--turquesa);
+  color: var(--basalto);
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 0.5rem;
+}
+.btn-enviar:hover {
+  background: var(--turquesa-d);
+  transform: translateY(-1px);
+}
+.form-nota {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(240,237,232,0.3);
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ── FOOTER ───────────────────────────────────── */
+footer {
+  background: #141210;
+  padding: 3rem 5vw;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+.footer-info {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(240,237,232,0.25);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+.footer-info strong { color: rgba(240,237,232,0.5); }
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+.footer-nav-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240,237,232,0.2);
+  margin-bottom: 0.25rem;
+}
+.footer-nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(240,237,232,0.35);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--turquesa); }
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; min-height: unset; padding: 5rem 5vw 4rem; }
+  .hero-visual { display: none; }
+  .seccion-dolor-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .propuesta-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .audiencia-grid { grid-template-columns: 1fr; }
+  .soberania-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .cta-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-nav { align-items: flex-start; }
+}
+@media (max-width: 680px) {
+  .proceso-timeline {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .proceso-timeline::before { display: none; }
+  .paso { text-align: left; display: flex; gap: 1.2rem; align-items: flex-start; }
+  .paso-circulo { flex-shrink: 0; }
+  .sdd-metricas { grid-template-columns: 1fr; }
+  .tabla-comparativa { font-size: 0.78rem; }
+  .tabla-comparativa thead th,
+  .tabla-comparativa tbody td { padding: 0.7rem 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ TOPBAR ══════════════════════════════ -->
+<header class="topbar">
+  <a class="nav-logo" href="/">
+    <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="4" fill="#1ABFBF" opacity="0.9"/>
+      <rect x="26" y="2" width="20" height="20" rx="4" fill="#2ABDD4" opacity="0.5"/>
+      <rect x="2" y="26" width="20" height="20" rx="4" fill="#2ABDD4" opacity="0.5"/>
+      <rect x="26" y="26" width="20" height="20" rx="4" fill="#1A3A7A" opacity="0.9"/>
+      <line x1="14" y1="14" x2="34" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="34" cy="34" r="3" fill="white"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Darío Saldaño</span>
+      <span class="nav-logo-title">Strategic Tech Consulting</span>
+    </div>
+  </a>
+  <a href="#cta" class="nav-cta">Hablar de mi sistema →</a>
+</header>
+
+<!-- ══════════ HERO ════════════════════════════════ -->
+<section class="hero" aria-label="Sección principal">
+  <div class="hero-content">
+    <div class="hero-eyebrow anim-1">
+      <span class="eyebrow-dot" aria-hidden="true"></span>
+      N3 · Desarrollo a Medida
+    </div>
+    <h1 class="hero-h1 anim-2">
+      Un sistema que funciona<br>
+      como funciona<br>
+      <em>tu negocio.</em>
+    </h1>
+    <p class="hero-sub anim-3">
+      No adaptás tu operación al software. El software se adapta a tu operación.
+      Con especificaciones cerradas antes de empezar. Sin sorpresas de alcance.
+    </p>
+    <div class="hero-ctas anim-4">
+      <a href="#cta" class="btn-primary">Hablar de mi sistema →</a>
+      <a href="#sdd" class="btn-ghost">Ver metodología SDD</a>
+    </div>
+  </div>
+
+  <div class="hero-visual anim-5" aria-hidden="true">
+    <div class="compare-card">
+      <div class="compare-header">
+        <div class="compare-col-head bad">Lo que tenés hoy</div>
+        <div class="compare-col-head good">Lo que te entregamos</div>
+      </div>
+      <div class="compare-rows">
+        <div class="compare-row">
+          <div class="compare-cell bad">Código que solo entiende quien lo escribió</div>
+          <div class="compare-cell good">Documentación que cualquier técnico puede leer</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">El alcance creció y el precio también</div>
+          <div class="compare-cell good">Especificación cerrada antes de escribir una línea</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">No sabés si está bien hasta que lo usás</div>
+          <div class="compare-cell good">Criterios de aceptación definidos antes de construir</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">Dependés del proveedor para cada cambio</div>
+          <div class="compare-cell good">El sistema y el código son tuyos. Punto.</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell bad">60% del presupuesto en retrabajo</div>
+          <div class="compare-cell good">60% menos retrabajo con metodología SDD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DOLOR / PROBLEMA ═══════════════════ -->
+<section class="seccion-dolor" aria-label="El problema del software mal especificado">
+  <div class="seccion-dolor-inner">
+    <div>
+      <p class="dolor-label">El patrón que se repite</p>
+      <h2 class="dolor-h2">
+        El peor proyecto de software
+        <span>es el que queda a medias.</span>
+      </h2>
+      <p class="dolor-prosa">
+        El patrón es siempre el mismo. Arrancás con una agencia o un freelancer con buenas intenciones. 
+        A los tres meses tenés algo que corre, pero no es lo que pediste. 
+        Cuesta el doble de lo acordado. Las pantallas están, pero los flujos críticos de tu operación 
+        quedaron a mitad. Y hay un detalle que nadie menciona hasta que es tarde: 
+        <strong>el único que entiende el código es quien lo escribió.</strong>
+      </p>
+      <p class="dolor-prosa">
+        Si ese desarrollador se va —y se va, siempre— perdiste todo. No el acceso. 
+        El conocimiento acumulado en esa arquitectura que nadie más puede leer. 
+        Eso no es mala suerte. Es la consecuencia directa de haber empezado a construir 
+        sin haber especificado con precisión <strong>qué construir, cómo verificarlo, y cuándo está terminado.</strong>
+      </p>
+      <p class="dolor-prosa">
+        En Chilecito trabajo con agroindustrias, exportadoras de frutos secos y bodegas 
+        que llegaron a mí después de haber pagado sistemas que nunca funcionaron del todo. 
+        Una planta procesadora de tomate con un sistema de trazabilidad que cubría el 40% del proceso. 
+        Una exportadora de nueces con tres sistemas distintos que nadie integró jamás. 
+        No son casos aislados. Es el mercado por defecto.
+      </p>
+    </div>
+
+    <div class="fricciones">
+      <div class="friccion-item">
+        <div class="friccion-titulo">La ambigüedad que se paga al final</div>
+        <p class="friccion-desc">
+          "Que funcione" no es una especificación. Cuando el criterio de éxito es difuso, 
+          el desarrollador construye lo que interpretó. Vos esperabas otra cosa. 
+          El conflicto llega en la entrega, no antes.
+        </p>
+      </div>
+      <div class="friccion-item">
+        <div class="friccion-titulo">El código que nadie más puede tocar</div>
+        <p class="friccion-desc">
+          Sin documentación de arquitectura, el sistema es una caja negra. 
+          Modificar algo implica romper tres cosas más. 
+          Escalar implica reescribir. La deuda técnica crece sola.
+        </p>
+      </div>
+      <div class="friccion-item">
+        <div class="friccion-titulo">El scope que se expande sin control</div>
+        <p class="friccion-desc">
+          Cada reunión aparece algo nuevo. Los cambios de idea en medio del desarrollo 
+          multiplican el costo. Sin especificación firmada, no hay forma de decir 
+          qué estaba incluido y qué no.
+        </p>
+      </div>
+      <div class="friccion-item">
+        <div class="friccion-titulo">La dependencia que no termina nunca</div>
+        <p class="friccion-desc">
+          Si para cambiar un botón necesitás llamar al proveedor, 
+          no tenés un sistema propio. Tenés un sistema en alquiler con costo variable.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROPUESTA / SDD ════════════════════ -->
+<section class="seccion-propuesta" id="sdd" aria-label="Metodología SDD - Specs Driven Development">
+  <div class="propuesta-inner">
+    <div>
+      <p class="propuesta-label">La metodología</p>
+      <h2 class="propuesta-h2">
+        Primero se define.<br>
+        Después se construye.<br>
+        <em>Sin excepciones.</em>
+      </h2>
+      <p class="propuesta-prosa">
+        <strong>SDD — Specs Driven Development</strong> es la metodología con la que trabajo. 
+        Antes de escribir una sola línea de código, producimos un documento que responde 
+        tres preguntas con precisión quirúrgica: qué hay que construir exactamente, 
+        cómo se va a verificar que está bien hecho, y cuándo se puede considerar terminado.
+      </p>
+      <p class="propuesta-prosa">
+        Esas tres preguntas parecen simples. No lo son. La primera es fácil de malinterpretar 
+        porque el pedido en lenguaje de negocio y el pedido en lenguaje técnico son cosas distintas, 
+        y la brecha entre las dos es exactamente donde viven la mayoría de los errores. 
+        La tercera —cuándo está terminado— es la más difícil, porque sin una condición de cierre explícita, 
+        los sistemas tienden a crecer sin límite.
+      </p>
+      <p class="propuesta-prosa">
+        El resultado es concreto. Con SDD logramos <strong>60% menos retrabajo</strong>, 
+        un código donde el <strong>70% es generado por IA bajo especificaciones precisas</strong>, 
+        y entregas que cumplen lo que acordamos porque lo que acordamos estaba escrito 
+        antes de que empezara el desarrollo. No es teoría: es el mismo sistema que apliqué 
+        en los equipos de Mercado Libre para productos con más de un millón de usuarios.
+      </p>
+
+      <div class="sdd-metricas">
+        <div class="metrica-item">
+          <div class="metrica-valor">60%</div>
+          <div class="metrica-label">Menos retrabajo</div>
+        </div>
+        <div class="metrica-item">
+          <div class="metrica-valor">70%</div>
+          <div class="metrica-label">Código generado por IA bajo specs</div>
+        </div>
+        <div class="metrica-item">
+          <div class="metrica-valor">40%</div>
+          <div class="metrica-label">Reducción en tiempos de entrega</div>
+        </div>
+        <div class="metrica-item">
+          <div class="metrica-valor">0%</div>
+          <div class="metrica-label">Inconsistencias en datos al cierre</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sdd-incluye">
+        <p class="sdd-incluye-titulo">Qué incluye el servicio</p>
+
+        <div class="sdd-item">
+          <span class="sdd-num">01</span>
+          <p class="sdd-item-texto">
+            <strong>Relevamiento del negocio y flujos críticos.</strong> Entendemos antes de diseñar. 
+            Mapeamos cada proceso, cada excepción, cada integración existente.
+          </p>
+        </div>
+        <div class="sdd-item">
+          <span class="sdd-num">02</span>
+          <p class="sdd-item-texto">
+            <strong>Especificación SDD completa.</strong> Documento de arquitectura con criterios de aceptación 
+            firmados. Cada funcionalidad definida. Sin interpretación posible.
+          </p>
+        </div>
+        <div class="sdd-item">
+          <span class="sdd-num">03</span>
+          <p class="sdd-item-texto">
+            <strong>Desarrollo iterativo con revisiones quincenales.</strong> Ciclos cortos. 
+            Feedback real. Ajustes dentro del alcance especificado.
+          </p>
+        </div>
+        <div class="sdd-item">
+          <span class="sdd-num">04</span>
+          <p class="sdd-item-texto">
+            <strong>QA contra especificación.</strong> No validamos el sistema contra la intuición del desarrollador. 
+            Validamos contra lo que se definió en etapa dos. Sin ambigüedad.
+          </p>
+        </div>
+        <div class="sdd-item">
+          <span class="sdd-num">05</span>
+          <p class="sdd-item-texto">
+            <strong>Entrega con documentación y transferencia de conocimiento.</strong> El código, 
+            la arquitectura y el manual de uso son tuyos desde el primer día. 
+            No necesitás llamarnos para seguir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROCESO / TIMELINE ════════════════ -->
+<section class="seccion-proceso" aria-label="Proceso de trabajo en 5 etapas">
+  <div class="proceso-inner">
+    <p class="proceso-label">Cómo funciona</p>
+    <h2 class="proceso-h2">Cinco etapas. Un sistema que es tuyo.</h2>
+    <p class="proceso-sub">
+      Duración estimada: <strong>8 a 16 semanas</strong> según la complejidad del sistema. 
+      Sin etapas infinitas ni "ya casi está" que se extienden tres meses más.
+    </p>
+
+    <div class="proceso-timeline">
+      <div class="paso">
+        <div class="paso-circulo" aria-hidden="true">01</div>
+        <div class="paso-nombre">Relevamiento</div>
+        <p class="paso-desc">Entendemos tu operación real. Flujos, integraciones, excepciones y lo que hoy no funciona.</p>
+        <span class="paso-semana">Sem. 1–2</span>
+      </div>
+      <div class="paso">
+        <div class="paso-circulo" aria-hidden="true">02</div>
+        <div class="paso-nombre">Especificación SDD</div>
+        <p class="paso-desc">Documento de arquitectura con criterios de aceptación cerrados. Lo firmamos antes de construir.</p>
+        <span class="paso-semana">Sem. 2–3</span>
+      </div>
+      <div class="paso">
+        <div class="paso-circulo" aria-hidden="true">03</div>
+        <div class="paso-nombre">Desarrollo iterativo</div>
+        <p class="paso-desc">Ciclos de dos semanas con revisiones. Ves avances reales, no promesas de lo que viene.</p>
+        <span class="paso-semana">Sem. 4–12</span>
+      </div>
+      <div class="paso">
+        <div class="paso-circulo" aria-hidden="true">04</div>
+        <div class="paso-nombre">QA contra spec</div>
+        <p class="paso-desc">Validación estricta contra los criterios de aceptación definidos. Sin test manual, sin intuición.</p>
+        <span class="paso-semana">Sem. 12–14</span>
+      </div>
+      <div class="paso">
+        <div class="paso-circulo" aria-hidden="true">05</div>
+        <div class="paso-nombre">Entrega y traspaso</div>
+        <p class="paso-desc">Código, documentación, arquitectura y sesión de transferencia. El sistema es tuyo. Completo.</p>
+        <span class="paso-semana">Sem. 15–16</span>
+      </div>
+    </div>
+
+    <div class="proceso-nota">
+      <strong>¿Qué pasa si necesitás algo urgente en semana 8?</strong> Si el cambio está fuera de la especificación firmada, 
+      abrimos una especificación nueva para esa funcionalidad. El alcance original no se mueve. 
+      El presupuesto original no se mueve. Así se controla el crecimiento de un proyecto de software.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PARA QUIÉN ES / NO ES ══════════════ -->
+<section class="seccion-audiencia" aria-label="A quién le sirve y a quién no">
+  <p class="audiencia-label">Fit honesto</p>
+  <h2 class="audiencia-h2">
+    Antes de hablar, chequeá si esto es para vos.
+  </h2>
+
+  <div class="audiencia-grid">
+    <div class="audiencia-col si">
+      <div class="audiencia-col-head">Para quien sí tiene sentido</div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">✓</span>
+        <p class="audiencia-texto">
+          <strong>Operaciones con procesos únicos</strong> que ningún SaaS cubre del todo. 
+          Trazabilidad de lotes con lógica propia. Liquidaciones con reglas específicas del rubro. 
+          Integraciones entre sistemas que hoy se hacen a mano.
+        </p>
+      </div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">✓</span>
+        <p class="audiencia-texto">
+          <strong>Negocios con sistemas legacy</strong> que ya no escalan, no tienen soporte, 
+          o son una caja negra que nadie puede tocar sin romper algo más.
+        </p>
+      </div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">✓</span>
+        <p class="audiencia-texto">
+          <strong>Exportadoras o agroindustrias</strong> —como las del Valle de Famatina o del corredor 
+          vitivinícola riojano— con trazabilidad regulatoria, certificaciones de origen 
+          y documentación de exportación que no puede generarse a mano.
+        </p>
+      </div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">✓</span>
+        <p class="audiencia-texto">
+          <strong>Empresas que ya pagaron por software</strong> que no funcionó como esperaban 
+          y quieren entender qué falló antes de volver a invertir.
+        </p>
+      </div>
+    </div>
+
+    <div class="audiencia-col no">
+      <div class="audiencia-col-head">Para quien no es el momento</div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">→</span>
+        <p class="audiencia-texto">
+          <strong>Si un SaaS existente cubre el 90% de tu necesidad:</strong> te lo recomendamos 
+          y no cobramos por esa conversación. Construir a medida cuando hay una solución estándar 
+          que funciona es gastar plata innecesariamente.
+        </p>
+      </div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">→</span>
+        <p class="audiencia-texto">
+          <strong>Proyectos donde el dueño no puede dedicar tiempo al relevamiento.</strong> 
+          El conocimiento del negocio lo tenés vos, no nosotros. Si no hay disponibilidad para 
+          las sesiones de relevamiento, el sistema va a quedar mal especificado.
+        </p>
+      </div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">→</span>
+        <p class="audiencia-texto">
+          <strong>Proyectos sin un proceso real corriendo.</strong> Si todavía no sabés 
+          cómo funciona tu operación porque está recién arrancando, 
+          primero validá el proceso manual. Después lo sistematizamos.
+        </p>
+      </div>
+      <div class="audiencia-item">
+        <span class="audiencia-icon">→</span>
+        <p class="audiencia-texto">
+          <strong>Quien busca el precio más bajo del mercado.</strong> No competimos en precio. 
+          Competimos en certeza: el sistema cumple lo que especificamos o lo corregimos. 
+          Ese nivel de garantía tiene un costo real.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SOBERANÍA TÉCNICA ══════════════════ -->
+<section class="seccion-soberania" aria-label="Soberanía técnica - el código es tuyo">
+  <div class="soberania-bg-texto" aria-hidden="true">TUYO</div>
+  <div class="soberania-inner">
+    <div>
+      <p class="soberania-label">Lo que nadie dice</p>
+      <h2 class="soberania-h2">
+        El sistema que construimos
+        <em>es tuyo.</em>
+        Sin condiciones.
+      </h2>
+      <p class="soberania-prosa">
+        En la mayoría de los proyectos de software, el código termina siendo del proveedor en la práctica, 
+        aunque el contrato diga lo contrario. Sin documentación de arquitectura, sin especificaciones, 
+        sin transferencia real de conocimiento, el cliente tiene el código pero no puede hacer nada con él 
+        sin llamar al mismo proveedor de siempre.
+      </p>
+      <p class="soberania-prosa">
+        Acá funciona diferente. Al cierre del proyecto, <strong>el código, la documentación y la arquitectura 
+        son tuyos sin condiciones.</strong> Cualquier desarrollador en Argentina, en LATAM o donde sea 
+        puede tomar el sistema y continuarlo, porque tiene especificaciones completas que explican 
+        cada decisión de diseño. Si querés prescindir de nosotros el día siguiente de la entrega, 
+        podés hacerlo. Eso no es una promesa de marketing. Es lo que diferencia un sistema propio 
+        de un sistema en alquiler.
+      </p>
+      <a href="#cta" class="btn-primary" style="margin-top:0.5rem;">Quiero mi propio sistema →</a>
+    </div>
+
+    <div class="soberania-pillars" aria-label="Pilares de la soberanía técnica">
+      <div class="pillar-item">
+        <div class="pillar-icon-wrap" aria-hidden="true">📄</div>
+        <div>
+          <div class="pillar-titulo">Documentación completa de arquitectura</div>
+          <p class="pillar-desc">Cada módulo, cada integración, cada decisión técnica está documentada. No hay conocimiento oculto.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon-wrap" aria-hidden="true">🔓</div>
+        <div>
+          <div class="pillar-titulo">Código fuente en tu repositorio</div>
+          <p class="pillar-desc">Desde el primer día tenés acceso al repositorio. El código vive en tu infraestructura, no en la nuestra.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon-wrap" aria-hidden="true">🔧</div>
+        <div>
+          <div class="pillar-titulo">Sin dependencia de proveedor único</div>
+          <p class="pillar-desc">Cualquier desarrollador que lea la spec puede continuar el sistema. La continuidad no depende de nosotros.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-icon-wrap" aria-hidden="true">📋</div>
+        <div>
+          <div class="pillar-titulo">Criterios de aceptación firmados</div>
+          <p class="pillar-desc">Lo que se entrega está definido antes de construir. La entrega final es verificable contra un documento, no contra una opinión.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COMPARATIVA ════════════════════════ -->
+<section class="seccion-comparativa" aria-label="Comparativa con alternativas del mercado">
+  <div class="comparativa-inner">
+    <p class="comparativa-label">Por qué SDD y no otra cosa</p>
+    <h2 class="comparativa-h2">
+      La diferencia no está en la tecnología.<br>Está en el orden del proceso.
+    </h2>
+
+    <table class="tabla-comparativa" role="table">
+      <thead>
+        <tr>
+          <th scope="col">Dimensión</th>
+          <th scope="col">Agencia / freelancer estándar</th>
+          <th scope="col">Metodología SDD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Especificación</td>
+          <td>Se va definiendo durante el desarrollo</td>
+          <td>Completa y firmada antes de escribir código</td>
+        </tr>
+        <tr>
+          <td>Criterio de éxito</td>
+          <td>"Que funcione" (interpretable)</td>
+          <td>Criterios de aceptación verificables por terceros</td>
+        </tr>
+        <tr>
+          <td>Control de alcance</td>
+          <td>Scope creep crónico con costos adicionales</td>
+          <td>Cambios fuera de spec = especificación nueva separada</td>
+        </tr>
+        <tr>
+          <td>Propiedad del código</td>
+          <td>Teóricamente tuyo, prácticamente del proveedor</td>
+          <td>Tuyo desde día uno con documentación completa</td>
+        </tr>
+        <tr>
+          <td>Retrabajo</td>
+          <td>Hasta 60% del presupuesto en correcciones</td>
+          <td>60% menos retrabajo por diseño</td>
+        </tr>
+        <tr>
+          <td>IA en el proceso</td>
+          <td>Opcional y sin metodología clara</td>
+          <td>70% del código generado por IA bajo especificaciones</td>
+        </tr>
+        <tr>
+          <td>Dependencia post-entrega</td>
+          <td>Alta: cualquier cambio necesita al proveedor</td>
+          <td>Cero: cualquier técnico puede continuar con la spec</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ GARANTÍA ════════════════════════════ -->
+<section class="seccion-garantia" aria-label="Garantía del servicio">
+  <div class="garantia-inner">
+    <div class="garantia-icon" aria-hidden="true">✓</div>
+    <p class="garantia-label">Garantía</p>
+    <h3 class="garantia-h3">
+      Los criterios de aceptación se definen antes de construir.<br>No después.
+    </h3>
+    <p class="garantia-texto">
+      "Si el sistema entregado no cumple las especificaciones firmadas en etapa dos, 
+      lo corregimos sin costo adicional. <strong>No hay ambigüedad posible</strong> sobre qué significa 
+      'cumplir' porque lo definimos juntos antes de que empezara el desarrollo. 
+      Esta garantía no es un recurso de marketing: es la consecuencia lógica de trabajar 
+      con criterios de aceptación concretos."
+    </p>
+    <p class="garantia-nota">— Darío Saldaño · Chilecito, La Rioja, Argentina</p>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════════════════════════════ -->
+<section class="seccion-faq" aria-label="Preguntas frecuentes">
+  <div class="faq-inner">
+    <p class="faq-label">Lo que pregunta un prospecto inteligente</p>
+    <h2 class="faq-h2">Preguntas frecuentes</h2>
+
+    <div class="faq-item" role="region">
+      <button class="faq-pregunta" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-pregunta-texto">¿Cuánto tarda un proyecto típico?</span>
+        <span class="faq-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-respuesta">
+        Depende de la complejidad del sistema. Un módulo de trazabilidad de lotes para una planta industrial 
+        puede estar listo en 8 semanas. Un sistema integral de gestión operativa con múltiples integraciones 
+        puede llevar 16 semanas. Lo que nunca pasa: estimamos un tiempo y entregamos en el doble. 
+        <strong>La especificación SDD nos permite dar plazos reales porque sabemos exactamente qué hay que construir 
+        antes de comprometer una fecha.</strong>
+      </div>
+    </div>
+
+    <div class="faq-item" role="region">
+      <button class="faq-pregunta" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-pregunta-texto">¿Qué tecnologías usan?</span>
+        <span class="faq-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-respuesta">
+        Elegimos la tecnología según el contexto del cliente, no según preferencias del desarrollador. 
+        Para la mayoría de los sistemas de gestión para pymes e industrias del interior argentino 
+        priorizamos tecnologías con documentación amplia, comunidad activa y costo de mantenimiento bajo. 
+        <strong>La tecnología no es la decisión más importante: la especificación sí.</strong> 
+        Un sistema mal especificado en la mejor tecnología del mundo va a fallar igual.
+      </div>
+    </div>
+
+    <div class="faq-item" role="region">
+      <button class="faq-pregunta" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-pregunta-texto">¿Qué pasa si cambio de idea a mitad del proyecto?</span>
+        <span class="faq-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-respuesta">
+        Es el escenario más común y el más costoso en proyectos sin metodología. 
+        Con SDD, si aparece una nueva necesidad durante el desarrollo, la evaluamos: 
+        si está dentro del alcance especificado, la incorporamos. 
+        Si está fuera, abrimos una especificación nueva separada con su propio alcance y costo. 
+        <strong>El alcance original no se mueve. El presupuesto original no se mueve.</strong> 
+        Eso protege tanto al cliente como al resultado final.
+      </div>
+    </div>
+
+    <div class="faq-item" role="region">
+      <button class="faq-pregunta" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-pregunta-texto">¿El código queda en mi poder?</span>
+        <span class="faq-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-respuesta">
+        Sí. Completamente. Desde el primer día el código vive en un repositorio tuyo, 
+        no en nuestra infraestructura. Al cierre del proyecto recibís el código fuente completo, 
+        la documentación de arquitectura, las especificaciones firmadas y una sesión de transferencia 
+        de conocimiento. <strong>Si mañana decidís continuar el desarrollo con otro equipo, podés hacerlo.</strong> 
+        No hay candado técnico ni dependencia contractual posterior.
+      </div>
+    </div>
+
+    <div class="faq-item" role="region">
+      <button class="faq-pregunta" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-pregunta-texto">¿Hacen mantenimiento después de entregar?</span>
+        <span class="faq-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-respuesta">
+        Podemos hacerlo, pero no es obligatorio. La soberanía técnica implica que no necesitás llamarnos 
+        para el mantenimiento si no querés. Si preferís tener un equipo propio, un freelancer, 
+        o continuar con nosotros bajo un contrato de soporte separado, las tres opciones están abiertas. 
+        <strong>El sistema fue construido para ser entendible por cualquier técnico que lea la documentación.</strong>
+      </div>
+    </div>
+
+    <div class="faq-item" role="region">
+      <button class="faq-pregunta" aria-expanded="false" onclick="toggleFaq(this)">
+        <span class="faq-pregunta-texto">¿Cómo sé que el sistema va a funcionar en mi escala?</span>
+        <span class="faq-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="faq-respuesta">
+        Porque la escala es un criterio de aceptación que se define en la especificación. 
+        "Tiene que soportar 500 transacciones diarias" o "tiene que funcionar con 15 usuarios simultáneos" 
+        son requisitos concretos que van a la spec y contra los cuales validamos antes de entregar. 
+        <strong>No preguntamos al desarrollador si escala. Lo verificamos contra el criterio definido.</strong> 
+        Es la misma metodología que apliqué en Mercado Pago para sistemas con más de un millón de usuarios activos.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA FINAL ════════════════════════════ -->
+<section class="seccion-cta" id="cta" aria-label="Formulario de contacto">
+  <div class="cta-inner">
+    <div>
+      <p class="cta-label">Empezar</p>
+      <h2 class="cta-h2">
+        Contanos qué proceso
+        <em>querés sistematizar.</em>
+      </h2>
+      <p class="cta-desc">
+        Si en la primera reunión no encontramos un camino viable, te lo decimos 
+        antes de que gastés un peso. No hay propuesta automática. No hay presupuesto enviado 
+        por mail sin haber entendido qué necesitás.
+      </p>
+
+      <div class="cta-dato">
+        <span class="cta-dato-icon">—</span>
+        <p class="cta-dato-texto">Primera conversación sin costo</p>
+      </div>
+      <div class="cta-dato">
+        <span class="cta-dato-icon">—</span>
+        <p class="cta-dato-texto">Sin propuesta automática ni demo enlatada</p>
+      </div>
+      <div class="cta-dato">
+        <span class="cta-dato-icon">—</span>
+        <p class="cta-dato-texto">Trabajo con pymes, exportadoras e industrias de La Rioja y Argentina</p>
+      </div>
+      <div class="cta-dato">
+        <span class="cta-dato-icon">—</span>
+        <p class="cta-dato-texto">Darío Saldaño · Chilecito, La Rioja · dariosaldano.com.ar</p>
+      </div>
+    </div>
+
+    <form class="contacto-form" action="https://dariosaldano.com.ar/contacto" method="POST" aria-label="Formulario de contacto">
+      <div class="form-group">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="empresa">Empresa / Rubro</label>
+        <input class="form-input" type="text" id="empresa" name="empresa" placeholder="ej: Bodega, exportadora de nueces, clínica..." required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="proceso">¿Qué proceso querés sistematizar?</label>
+        <textarea class="form-textarea" id="proceso" name="proceso" placeholder="Describilo en pocas líneas: qué entra, qué sale, dónde se pierde información hoy." required></textarea>
+      </div>
+      <button type="submit" class="btn-enviar">Quiero hablar de mi sistema →</button>
+      <p class="form-nota">Sin compromiso. Primera conversación sin costo.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════════════════════════ -->
+<footer aria-label="Pie de página">
+  <div class="footer-inner">
+    <div class="footer-info">
+      <strong>Darío Saldaño</strong> · Consultor en Automatización, Agentes IA y Software a Medida<br>
+      Chilecito, La Rioja, Argentina · dariosaldano.com.ar<br>
+      +16 años en desarrollo de software · Primer equipo IT en La Rioja (2019)
+    </div>
+    <nav class="footer-nav" aria-label="Otros servicios">
+      <p class="footer-nav-label">Otros servicios</p>
+      <a href="/blueprint-automatizacion">L1 · Blueprint de Automatización</a>
+      <a href="/agentes-ia-negocio">L2 · Agentes IA para tu Negocio</a>
+      <a href="/automatizacion-proceso-critico">L4 · Proceso Crítico</a>
+      <a href="/eliminar-tareas-repetitivas">L5 · Tareas Repetitivas</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ══════════ JAVASCRIPT MÍNIMO ══════════════════ -->
+<script>
+  // Accordion FAQ
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    // Cerrar todos
+    document.querySelectorAll('.faq-item').forEach(function(i) {
+      i.classList.remove('open');
+      i.querySelector('.faq-pregunta').setAttribute('aria-expanded', 'false');
+    });
+    // Abrir el clickeado si estaba cerrado
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Scroll suave en links internos
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

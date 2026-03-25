@@ -7,6 +7,7 @@ const navItems = [
     { label: 'Inicio', href: '/#hero' },
     { label: 'Sobre Mí', href: '/#sobre-mi' },
     { label: 'Servicios', href: '/#servicios' },
+    { label: 'Blueprint ⚡', href: '/blueprint-automatizacion', special: true },
     { label: 'SDD ★', href: '/sdd-ingenieria-alto-escala', special: true },
     { label: 'Proyectos', href: '/#proyectos' },
     { label: 'Blog', href: '/blog' },
