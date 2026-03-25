@@ -1,0 +1,259 @@
+.software-medida-landing {
+    --accent: var(--turquesa, #1ABFBF);
+    --accent-d: #0F8080;
+    --oxido: #C04830;
+    --ocre: #C2892A;
+    background-color: var(--ink-1);
+    color: var(--ghost-w);
+    font-family: 'Inter', sans-serif;
+}
+
+.software-medida-landing .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero */
+.software-medida-landing .hero {
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .software-medida-landing .hero {
+        grid-template-columns: 1fr;
+        padding: 6rem 0 4rem;
+    }
+}
+
+.software-medida-landing .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.software-medida-landing .hero-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.software-medida-landing .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.software-medida-landing .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.software-medida-landing .hero-sub {
+    font-size: 1.2rem;
+    color: var(--smoke-l);
+    max-width: 48ch;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* Compare Card */
+.software-medida-landing .compare-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.software-medida-landing .compare-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.software-medida-landing .compare-col-head {
+    padding: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.software-medida-landing .compare-col-head.bad { background: rgba(192, 72, 48, 0.1); color: var(--oxido); }
+.software-medida-landing .compare-col-head.good { background: rgba(26, 191, 191, 0.1); color: var(--accent); }
+
+.software-medida-landing .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.software-medida-landing .compare-cell {
+    padding: 1rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.software-medida-landing .compare-cell.bad { color: var(--smoke-m); }
+.software-medida-landing .compare-cell.good { color: var(--ghost-w); font-weight: 500; }
+
+/* Sections */
+.software-medida-landing .section {
+    padding: 8rem 0;
+}
+
+.software-medida-landing .bg-ink-2 { background-color: var(--ink-2); }
+
+.software-medida-landing .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.software-medida-landing .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+}
+
+/* Fricciones */
+.software-medida-landing .friccion-item {
+    background: rgba(192, 72, 48, 0.05);
+    border-left: 2px solid var(--oxido);
+    padding: 2rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Timeline */
+.software-medida-landing .timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 960px) {
+    .software-medida-landing .timeline {
+        grid-template-columns: 1fr;
+    }
+}
+
+.software-medida-landing .timeline-step {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.software-medida-landing .timeline-step:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.software-medida-landing .step-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+/* Audiencia Grid */
+.software-medida-landing .audiencia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .software-medida-landing .audiencia-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.software-medida-landing .audiencia-col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.software-medida-landing .col-head {
+    padding: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.software-medida-landing .col-head.si { background: rgba(26, 191, 191, 0.1); color: var(--accent); }
+.software-medida-landing .col-head.no { background: rgba(255, 255, 255, 0.05); color: var(--smoke-m); }
+
+.software-medida-landing .audiencia-item {
+    padding: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Button */
+.software-medida-landing .btn-primary {
+    background: var(--accent);
+    color: var(--ink-1);
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.software-medida-landing .btn-primary:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.software-medida-landing .btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.software-medida-landing .btn-ghost:hover {
+    border-color: var(--accent);
+    background: rgba(26, 191, 191, 0.05);
+}

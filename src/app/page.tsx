@@ -200,6 +200,23 @@ export default function Home() {
                 Ver Agentes <span>→</span>
               </div>
             </Link>
+
+            {/* Service 7 — Software a Medida */}
+            <Link href="/software-a-medida" className="svc-card">
+              <div className="svc-icon">🛠️</div>
+              <div className="svc-title">Software a Medida desde Cero</div>
+              <p className="svc-desc">
+                Sistemas que funcionan exactamente como tu negocio, sin código basura ni dependencia total del proveedor. Desarrollo bajo metodología SDD para asegurar soberanía técnica.
+              </p>
+              <ul className="svc-list">
+                <li>Sistemas de Gestión Custom</li>
+                <li>Arquitectura para Escalar</li>
+                <li>Documentación Técnica Real</li>
+              </ul>
+              <div className="svc-cta">
+                Ver Desarrollo <span>→</span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
