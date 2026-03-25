@@ -102,7 +102,7 @@ export default function Home() {
           <div className="card-grid">
 
             {/* Service 1 */}
-            <div className="svc-card">
+            <Link href="/implementacion-ia-equipos" className="svc-card special-card">
               <div className="svc-icon gold">📐</div>
               <div className="svc-title">SDD + IA para Equipos de Desarrollo</div>
               <p className="svc-desc">
@@ -114,9 +114,9 @@ export default function Home() {
                 <li>Adopción de IA Generativa</li>
               </ul>
               <div className="svc-cta" style={{ color: 'var(--gold-l)' }}>
-                Explorar servicio <span>→</span>
+                Ver Metodología <span>→</span>
               </div>
-            </div>
+            </Link>
 
             {/* Service 2 */}
             <div className="svc-card">
