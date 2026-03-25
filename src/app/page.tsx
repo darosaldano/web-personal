@@ -23,7 +23,7 @@ export default function Home() {
           <p className="sub">
             Ayudo a dueños de empresas, líderes y desarrolladores en LATAM a construir equipos de software
             que entregan resultados reales, sin el caos que normalmente los frena.
-            Con SDD + IA + Liderazgo con Propósito.
+            Mi Formula: SDD + IA + Liderazgo con Propósito.
           </p>
           <div className="hero-buttons">
             <Link href="/contacto" prefetch={false} className="btn btn-p">Hablemos de tu proyecto →</Link>
