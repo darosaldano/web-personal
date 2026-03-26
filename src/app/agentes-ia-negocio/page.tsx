@@ -21,20 +21,20 @@ export default function AIAgentsLanding() {
         <div className="hero-content">
           <div className="hero-eyebrow">
             <span className="hero-dot"></span>
-            N2 · Agentes de Inteligencia Artificial
+            N2 · Asistente Digital Automático
           </div>
           <h1>
-            Tu proceso más costoso funciona solo <em>mientras dormís.</em>
+            Tu proceso más costoso, <em>resuelto sin supervisión tuya.</em>
           </h1>
           <p className="hero-sub">
-            Diseñamos e implementamos agentes de IA entrenados en tu operación. No herramientas genéricas: sistemas que conocen tu negocio y trabajan solos.
+            Diseñamos e implementamos asistentes digitales entrenados en tu operación. No "bots" genéricos que responden mal, sino sistemas que conectan tus herramientas y ejecutan tareas repetitivas por vos.
           </p>
           <div className="hero-actions">
-            <Link href="/contacto?asunto=Agentes IA" className="btn-premium-p">
-              Mapear mi proceso
+            <Link href="/contacto?asunto=Asistente Digital" className="btn-premium-p">
+              Delegar un proceso →
             </Link>
             <Link href="#que-es" className="btn-premium-g">
-              ¿Qué es un agente IA?
+              ¿Por qué no es ChatGPT?
             </Link>
           </div>
         </div>
@@ -76,12 +76,12 @@ export default function AIAgentsLanding() {
         <div className="container">
           <div className="section-label">El problema real</div>
           <h2 className="section-title">
-            ChatGPT ya lo probaste.<br />No es eso lo que necesitás.
+            ChatGPT ya lo probaste.<br />Y te diste cuenta de que no sirve para correr un negocio.
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-lg text-smoke-l leading-relaxed mb-6">
-                Casi todos los negocios ya "usan IA". Tienen acceso a ChatGPT, tal vez algún empleado redacta mails o resume documentos. El problema es que nadie conectó la IA a lo que realmente importa en tu negocio: los procesos que consumen tiempo y energía cada día.
+                Todos hablan de IA. Pero si alguna vez intentaste usar un "bot" para atender clientes o procesar datos, seguro terminaste pidiendo disculpas por errores absurdos o perdiendo más tiempo corrigiéndolo que haciéndolo a mano. <strong>Las herramientas genéricas no sirven para operaciones específicas.</strong>
               </p>
               <div className="space-y-4">
                 {[ 
@@ -100,19 +100,25 @@ export default function AIAgentsLanding() {
               </div>
             </div>
             <div className="glass-card card-premium">
-              <p className="text-accent font-mono text-xs mb-6 uppercase tracking-widest">El impacto real</p>
-              <h3 className="text-2xl font-bold mb-6 text-ghost-w">Conectar la IA al proceso es la clave.</h3>
-              <p className="text-smoke-l mb-8">No busques transformar todo. Buscamos el 30% del día que es puro trabajo repetitivo.</p>
-              <div className="metric-strip">
-                <div className="metric-item">
-                  <div className="num">60%</div>
-                  <div className="label">Menos retrabajo</div>
-                </div>
-                <div className="metric-item">
-                  <div className="num">40%</div>
-                  <div className="label">Más velocidad</div>
-                </div>
-              </div>
+              <p className="text-accent font-mono text-xs mb-6 uppercase tracking-widest">Control Absoluto</p>
+              <h3 className="text-2xl font-bold mb-4 text-ghost-w">No cruzás los dedos. Lo auditás todo.</h3>
+              <p className="text-smoke-l mb-6">
+                El miedo más grande a delegar en un software es perder el control. Por eso construimos tableros de comando donde ves todo lo que el Asistente Digital hace, paso a paso.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex gap-3 items-center">
+                  <span className="text-accent">✓</span>
+                  <span className="text-smoke-m text-sm">Registro de cada decisión tomada</span>
+                </li>
+                <li className="flex gap-3 items-center">
+                  <span className="text-accent">✓</span>
+                  <span className="text-smoke-m text-sm">Alertas humanas si algo sale del patrón</span>
+                </li>
+                <li className="flex gap-3 items-center">
+                  <span className="text-accent">✓</span>
+                  <span className="text-smoke-m text-sm">Botón de pausa inmediato</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -185,21 +191,21 @@ export default function AIAgentsLanding() {
       <section className="section">
         <div className="container">
           <div className="section-label">Diferencial</div>
-          <h2 className="section-title">No todos los agentes son iguales</h2>
+          <h2 className="section-title">Garantías de Ejecución</h2>
           <div className="table-wrapper">
             <table>
               <thead>
                 <tr>
                   <th className="text-xs uppercase tracking-widest text-smoke-m">Característica</th>
-                  <th className="text-xs uppercase tracking-widest text-smoke-m">Implementación Estándar</th>
-                  <th className="text-xs uppercase tracking-widest text-accent">Metodología SDD</th>
+                  <th className="text-xs uppercase tracking-widest text-smoke-m">Suscripciones Genéricas</th>
+                  <th className="text-xs uppercase tracking-widest text-accent">Asistente Propio Analizado</th>
                 </tr>
               </thead>
               <tbody>
                 {[ 
-                  { label: 'Definición', normal: 'Se ajusta durante el desarrollo.', premium: 'Criterios de aceptación antes del código.' },
-                  { label: 'Garantía', normal: 'Basada en "buena voluntad".', premium: '100% casos de dominio garantizados.' },
-                  { label: 'Integración', normal: 'Procesos se adaptan a la herramienta.', premium: 'El agente se adapta a tu sistema.' }
+                  { label: 'Propiedad', normal: 'Alquilás la capacidad mensual.', premium: 'El sistema es tuyo, en tu infraestructura.' },
+                  { label: 'Integración', normal: 'Conectas a lo que permite la API genérica.', premium: 'Conectamos directo a tu ERP/CRM local.' },
+                  { label: 'Privacidad', normal: 'Entrenás modelos de terceros con tus datos.', premium: 'Tus datos nunca salen de tu entorno protegido.' }
                 ].map((row, i) => (
                   <tr key={i}>
                     <td className="font-mono text-[10px] text-smoke-m">{row.label}</td>
@@ -218,27 +224,31 @@ export default function AIAgentsLanding() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="section-title mb-6">Mapeemos tu primer agente hoy.</h2>
+              <h2 className="section-title mb-6">Empecemos por el proceso<br />más repetitivo que tengas.</h2>
               <p className="text-smoke-l text-lg mb-8">
-                El mapeo inicial es de una semana. En 60 días podés tener tu proceso más crítico funcionando solo.
+                Desarrollo desde USD $1,500 (único pago).
               </p>
-              <div className="flex gap-4">
-                <div className="glass-card p-4 flex-grow text-center">
-                  <div className="text-accent font-bold text-xl">4-8 sem</div>
-                  <div className="text-[10px] text-smoke-m uppercase">Tiempo de entrega</div>
-                </div>
-                <div className="glass-card p-4 flex-grow text-center">
-                  <div className="text-accent font-bold text-xl">100%</div>
-                  <div className="text-[10px] text-smoke-m uppercase">Garantía de Dominio</div>
-                </div>
-              </div>
+              <ul className="space-y-4 mb-8">
+                <li className="flex gap-4 items-center">
+                  <span className="text-accent">✓</span>
+                  <span className="text-smoke-m text-sm">Entregado en 3 a 5 semanas</span>
+                </li>
+                <li className="flex gap-4 items-center">
+                  <span className="text-accent">✓</span>
+                  <span className="text-smoke-m text-sm">Garantía de funcionamiento por escrito</span>
+                </li>
+                <li className="flex gap-4 items-center">
+                  <span className="text-accent">✓</span>
+                  <span className="text-smoke-m text-sm">Sistema alojado bajo tu titularidad</span>
+                </li>
+              </ul>
             </div>
             <div className="text-center lg:text-left">
-              <Link href="/contacto?asunto=Agentes IA" className="btn-premium-p">
-                Solicitar Mapeo Inicial →
+              <Link href="/contacto?asunto=Asistente Digital" className="btn-premium-p">
+                Agendar llamada de diagnóstico →
               </Link>
               <p className="text-smoke-m text-xs mt-6 opacity-60">
-                Respuesta en menos de 24 horas hábiles.
+                Llamada de 20 minutos. Si la IA no sirve para tu problema, te lo digo directo.
               </p>
             </div>
           </div>
