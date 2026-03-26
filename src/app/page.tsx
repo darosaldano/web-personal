@@ -101,23 +101,6 @@ export default function Home() {
           </p>
           <div className="card-grid">
 
-            {/* Service 1 — SDD + IA para Equipos */}
-            <Link href="/implementacion-ia-equipos" className="svc-card special-card">
-              <div className="svc-icon gold">📐</div>
-              <div className="svc-title">SDD + IA para Equipos de Desarrollo</div>
-              <p className="svc-desc">
-                El problema más costoso en el desarrollo de software es construir lo incorrecto por no haber especificado correctamente. Esta metodología invierte el orden habitual: Primero se especifica con precisión, luego la IA genera el código base y el equipo valida y refina. Menos retrabajo, más velocidad, adopción de IA sin caos.
-              </p>
-              <ul className="svc-list">
-                <li>Formación en SDD</li>
-                <li>Templates y flujos de trabajo</li>
-                <li>Adopción de IA Generativa</li>
-              </ul>
-              <div className="svc-cta" style={{ color: 'var(--gold-l)' }}>
-                Ver Metodología <span>→</span>
-              </div>
-            </Link>
-
             {/* Service 2 — Blueprint */}
             <Link href="/blueprint-automatizacion" className="svc-card special-card">
               <div className="svc-icon electric">⚡</div>
@@ -183,6 +166,23 @@ export default function Home() {
               </ul>
               <div className="svc-cta">
                 Ver Desarrollo <span>→</span>
+              </div>
+            </Link>
+
+            {/* Service 1 — SDD + IA para Equipos */}
+            <Link href="/implementacion-ia-equipos" className="svc-card special-card">
+              <div className="svc-icon gold">📐</div>
+              <div className="svc-title">SDD + IA para Equipos de Desarrollo</div>
+              <p className="svc-desc">
+                El problema más costoso en el desarrollo de software es construir lo incorrecto por no haber especificado correctamente. Esta metodología invierte el orden habitual: Primero se especifica con precisión, luego la IA genera el código base y el equipo valida y refina. Menos retrabajo, más velocidad, adopción de IA sin caos.
+              </p>
+              <ul className="svc-list">
+                <li>Formación en SDD</li>
+                <li>Templates y flujos de trabajo</li>
+                <li>Adopción de IA Generativa</li>
+              </ul>
+              <div className="svc-cta" style={{ color: 'var(--gold-l)' }}>
+                Ver Metodología <span>→</span>
               </div>
             </Link>
 
