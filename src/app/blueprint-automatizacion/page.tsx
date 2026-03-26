@@ -3,13 +3,13 @@ import { Metadata } from 'next';
 import './blueprint-landing.css';
 
 export const metadata: Metadata = {
-  title: "Blueprint de Automatización · Diagnóstico antes de invertir · Darío Saldaño",
-  description: "Antes de contratar un equipo de desarrollo o una agencia, sabé exactamente qué automatizar, en qué orden y con qué presupuesto realista. Diagnóstico técnico para pymes y agroindustrias en Argentina.",
-  keywords: ["automatización de procesos", "consultoría", "blueprint digital", "Darío Saldaño", "La Rioja", "Argentina"],
+  title: "Diagnóstico de Automatización · Sabé qué cambiar antes de invertir · Darío Saldaño",
+  description: "Antes de comprar cualquier sistema, conocé exactamente cuál es el problema real y su solución. Diagnóstico técnico para pymes y negocios del interior argentino.",
+  keywords: ["automatización de procesos", "consultoría", "diagnóstico digital", "Darío Saldaño", "La Rioja", "Argentina", "interior", "NOA"],
   openGraph: {
-    title: "Blueprint de Automatización · Darío Saldaño",
-    description: "Diagnóstico técnico estratégico que define qué automatizar primero, qué herramienta usar y qué retorno esperás.",
-    images: ['/og-blueprint.png'], // Placeholder for OG image
+    title: "Diagnóstico de Automatización · Darío Saldaño",
+    description: "Sabé exactamente qué cambiar en tu negocio, con qué herramienta y cuánto te devuelve. Primera reunión sin costo.",
+    images: ['/og-blueprint.png'],
   }
 };
 
@@ -21,36 +21,41 @@ export default function BlueprintPage() {
         <div className="hero-content-bp">
           <div className="hero-eyebrow">
             <span className="eb-badge">N°1 · Diagnóstico Estratégico</span>
-            <span className="eb-label">Blueprint de Automatización</span>
+            <span className="eb-label">Diagnóstico de Automatización</span>
           </div>
 
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+            Para dueños y gerentes de negocios en ciudades del interior que quieren saber, antes de gastar en tecnología, exactamente qué cambiar y cuánto les devuelve.
+          </p>
+
           <h1>
-            Antes de gastar<br />
-            un peso en software,<br />
-            sabé <span className="accent">exactamente</span><br />
-            qué construir.
+            Antes de comprar<br />
+            cualquier sistema,<br />
+            conocé <span className="accent">exactamente</span><br />
+            cuál es el problema real.<br />
           </h1>
 
           <p className="hero-sub">
-            Un documento ejecutable que define qué automatizar primero, qué herramienta usar y qué retorno esperás. Sin venderte nada que no necesitás.
+            Un documento concreto con esto: qué proceso conviene cambiar primero, qué herramienta usaría, qué beneficios obtendrías y cuánto costaría implementarlo. Sin venderte nada que no necesitás.
           </p>
 
           <div className="hero-ctas">
-            <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p">Quiero mi Blueprint</Link>
+            <Link href="/contacto?asunto=Diagnóstico Automatización" className="btn-premium-p">Agendá una reunión sin compromiso</Link>
             <Link href="#como-funciona" className="btn-premium-g" style={{marginLeft: '1rem'}}>Ver cómo funciona</Link>
           </div>
+          <p style={{ marginTop: '1rem', fontSize: '0.8rem', opacity: 0.5 }}>45 minutos. Sin costo. Te cuento cómo funciona y vemos si tiene sentido para tu negocio.</p>
         </div>
 
         <div className="hero-card-bp card-premium">
-          <p className="hc-label">El documento incluye</p>
-          <p className="hc-title">Blueprint de Automatización — 6 secciones ejecutables</p>
+          <p className="hc-label">Lo que recibís</p>
+          <p className="hc-title">Diagnóstico de Automatización — 6 secciones concretas</p>
           <ul className="hc-list list-premium">
-            <li>Diagnóstico de fricción operativa: dónde perdés tiempo y dinero hoy</li>
-            <li>Priorización por retorno: qué automatizar primero y por qué ese orden</li>
-            <li>Recomendación de herramienta ajustada a tu contexto real</li>
-            <li>Estimación realista de inversión y retorno esperado</li>
-            <li>Especificaciones ejecutables por cualquier equipo técnico (SDD)</li>
-            <li>Plan de acción y secuencia de implementación paso a paso</li>
+            <li>Dónde perdés tiempo y plata hoy (proceso por proceso)</li>
+            <li>Qué cambiar primero y por qué ese orden</li>
+            <li>Qué herramienta usar, ajustada a tu presupuesto y equipo</li>
+            <li>Cuánto cuesta implementarlo y qué resultado esperar</li>
+            <li>Un documento que le podés dar a cualquier técnico para que lo implemente</li>
+            <li>Los pasos concretos para empezar, en orden</li>
           </ul>
           <p className="hero-card-footer" style={{marginTop: '1.5rem', opacity: 0.6, fontSize: '0.8rem'}}>
             Entrega en 2 semanas · Formato documento + sesión de revisión
@@ -70,14 +75,17 @@ export default function BlueprintPage() {
                 Falla antes.
               </h2>
               <div className="prose">
+                <p style={{ fontSize: '1.05rem', color: '#DDD8D0', lineHeight: 1.75, marginBottom: '1.5rem', background: 'rgba(25,191,191,0.05)', padding: '1.25rem 1.5rem', borderLeft: '3px solid rgba(25,191,191,0.4)', borderRadius: '4px' }}>
+                  Si cuando falta alguien del personal la operación se traba… si tenés información en planillas, en papel y en WhatsApp y nunca sabés cuál es la correcta… si cada tanto te preguntás en qué gasta tiempo tu personal y la respuesta no te cierra — esto es para vos.
+                </p>
                 <p>
                   La mayoría de los proyectos que fracasaron empezaron construyendo sin definir qué. Una bodega que invirtió en software de gestión y terminó usándolo para tres de las doce cosas que necesitaba. Una distribuidora que contrató desarrollo a medida y en ocho meses tenía la mitad del sistema.
                 </p>
                 <p style={{marginTop: '1.5rem'}}>
                   El problema no es la tecnología. Es la ambigüedad en el punto de partida. <strong>Cuando no sabés exactamente qué automatizar, cualquier herramienta te va a decepcionar.</strong>
                 </p>
-                <p style={{marginTop: '1.5rem'}}>
-                  En dieciséis años de proyectos reales vi repetirse el mismo patrón: <em>el costo más alto no es el software incorrecto, es el tiempo perdido después de comprarlo.</em>
+                <p style={{marginTop: '1.5rem', fontSize: '0.9rem', opacity: 0.65, fontStyle: 'italic'}}>
+                  ¿No es el momento? Guardá esto para cuando baje la temporada. El diagnóstico se puede hacer en cualquier momento del año — vos elegís cuándo.
                 </p>
               </div>
             </div>
@@ -110,23 +118,23 @@ export default function BlueprintPage() {
           <span className="sec-label">La propuesta</span>
           <h2 className="sec-title">
             Un diagnóstico que define<br />
-            el mecanismo, no el <span className="accent">proveedor</span>.
+            el camino, no el <span className="accent">proveedor</span>.
           </h2>
           <div className="prose">
             <p>
-              El Blueprint de Automatización no es un informe de consultoría genérico. Es un documento técnico con el nivel de especificación suficiente para que cualquier equipo pueda implementar lo que se definió sin ambigüedades (Metodología SDD).
+              El Diagnóstico de Automatización no es un informe genérico. Es un documento concreto con el nivel de detalle suficiente para que cualquier técnico pueda implementar lo que se definió sin ambigüedades.
             </p>
           </div>
 
           <div className="propuesta-grid">
             <div className="bp-sections">
               {[
-                { num: '01', title: 'Diagnóstico de fricción operativa', desc: 'Mapeamos dónde se pierde tiempo y dinero hoy: procesos manuales, puntos de falla, cuellos de botella.' },
-                { num: '02', title: 'Priorización por criterio de retorno', desc: 'Ordenamos los procesos por impacto medible versus costo de implementación.' },
-                { num: '03', title: 'Recomendación de herramienta ajustada al contexto', desc: 'La correcta para tu equipo, tu presupuesto y tu nivel de madurez digital actual.' },
-                { num: '04', title: 'Estimación realista de inversión y retorno', desc: 'Rangos honestos: cuánto cuesta implementar, cuánto tiempo lleva y qué resultado esperar.' },
-                { num: '05', title: 'Especificaciones ejecutables (metodología SDD)', desc: 'El documento que le entregás a cualquier desarrollador. Funcional, técnico, sin ambigüedades.' },
-                { num: '06', title: 'Plan de acción y secuencia de implementación', desc: 'Quién hace qué, en qué orden, con qué hitos. Una hoja de ruta completa.' },
+                { num: '01', title: 'Dónde perdés tiempo y plata hoy', desc: 'Proceso por proceso: qué se hace a mano, dónde se tarda más, qué pasa cuando alguien falta.' },
+                { num: '02', title: 'Qué cambiar primero y en qué orden', desc: 'Ordenamos los procesos por impacto real versus costo de implementación.' },
+                { num: '03', title: 'Qué herramienta usar', desc: 'La correcta para tu equipo, tu presupuesto y cómo funcíonate hoy.' },
+                { num: '04', title: 'Cuánto cuesta y qué resultá esperar', desc: 'Números honestos: cuánto cuesta implementar, cuánto tiempo lleva y qué resultado esperar.' },
+                { num: '05', title: 'Documento que cualquier técnico puede ejecutar', desc: 'Lo que le entregás a cualquier desarrollador. Funcional, detallado, sin ambigüedades.' },
+                { num: '06', title: 'Los pasos para empezar', desc: 'Quién hace qué, en qué orden, con qué hitos. Una hoja de ruta completa.' },
               ].map((item) => (
                 <div key={item.num} className="bp-sec-item">
                   <div className="bsi-num">{item.num}</div>
@@ -255,17 +263,17 @@ export default function BlueprintPage() {
               <thead>
                 <tr>
                   <th>Criterio</th>
-                  <th className="hi">Blueprint (Darío Saldaño)</th>
+                  <th className="hi">Diagnóstico (Darío Saldaño)</th>
                   <th>Agencia de software</th>
                   <th>Consultor genérico</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { c: 'Incentivo', b: 'Diagnóstico honesto (aunque sea NO)', a: 'Implementar (contrato)', g: 'Facturar horas' },
-                  { c: 'Entregable', b: 'Documento técnico ejecutable SDD', a: 'Propuesta de venta', g: 'Informe abstracto' },
-                  { c: 'Contexto', b: '+16 años en Argentina/LATAM real', a: 'Modelos estandarizados', g: 'Modelos teóricos' },
-                  { c: 'Garantía', b: 'Si no hay claridad, no se cobra', a: 'Sobre implementación', g: 'Raramente existe' },
+                  { c: 'Incentivo', b: 'Diagnóstico honesto (aunque el resultado sea: no hagás nada)', a: 'Implementar (contrato)', g: 'Facturar horas' },
+                  { c: 'Lo que recibís', b: 'Documento concreto que cualquier técnico puede ejecutar', a: 'Propuesta de venta', g: 'Informe abstracto' },
+                  { c: 'Contexto', b: '+16 años en Argentina real', a: 'Modelos estandarizados', g: 'Modelos teóricos' },
+                  { c: 'Garantía', b: 'Si al final no tenés un plan útil, no te cobro nada. Sin letra chica.', a: 'Sobre implementación', g: 'Raramente existe' },
                 ].map((row, idx) => (
                   <tr key={idx}>
                     <td>{row.c}</td>
@@ -308,28 +316,30 @@ export default function BlueprintPage() {
         <div className="container">
           <div className="cta-bp">
             <div>
-              <span className="sec-label">Contacto</span>
+              <span className="sec-label">Primer paso</span>
               <h2 className="sec-title">
-                En 30 minutos<br />
-                identificamos si tiene<br />
-                sentido <span className="accent">seguir</span>.
+                Una reunión de 45 minutos<br />
+                para saber si <span className="accent">tiene sentido</span>.
               </h2>
               <p className="prose" style={{color: '#DDD8D0'}}>
-                Si en la primera conversación no identificamos al menos un proceso crítico que valga la pena mapear, te lo decimos sin vueltas.
+                Si en esa conversación no identificás al menos una cosa concreta para mejorar, te lo decimos sin vueltas.
               </p>
               <ul className="list-premium" style={{marginTop: '2rem'}}>
-                <li>Primera conversación sin costo</li>
-                <li>Garantía de claridad total</li>
-                <li>Documento ejecutable propio</li>
+                <li>Primera reunión sin costo · 45 minutos · Sin compromiso</li>
+                <li>Si al final del diagnóstico no tenés un plan útil y accionable, no te cobro nada. Sin letra chica.</li>
+                <li>El diagnóstico completo parte desde $50.000 — en la primera reunión te doy el número exacto para tu caso.</li>
               </ul>
+              <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.6 }}>
+                ¿Estás pensando en comprar un sistema que ya existe? Bien. El diagnóstico te dice si ese sistema resuelve tu problema real o si vas a pagar por algo que vas a usar a medias.
+              </p>
             </div>
 
             <div className="form-bp" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
-              <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p" style={{width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '1.2rem 2rem'}}>
-                Quiero mapear mi proceso crítico →
+              <Link href="/contacto?asunto=Diagnóstico Automatización" className="btn-premium-p" style={{width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '1.2rem 2rem'}}>
+                Agendá una reunión sin compromiso →
               </Link>
-              <p style={{marginTop: '1.5rem', fontSize: '0.8rem', opacity: 0.6, color: '#DDD8D0'}}>
-                Respuesta en menos de 24 horas hábiles.
+              <p style={{marginTop: '1rem', fontSize: '0.8rem', opacity: 0.6, color: '#DDD8D0'}}>
+                45 minutos. Sin costo. Sin presupuesto escondido.
               </p>
             </div>
           </div>
