@@ -21,8 +21,8 @@
   line-height: 1.6;
 }
 
-.blueprint-root h1, 
-.blueprint-root h2, 
+.blueprint-root h1,
+.blueprint-root h2,
 .blueprint-root h3,
 .blueprint-root .display {
   font-family: 'Space Grotesk', sans-serif;
@@ -38,7 +38,7 @@
   max-width: 1160px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 4rem;
   align-items: center;
 }
@@ -90,7 +90,8 @@
 }
 
 .blueprint-root .hc-list {
-  display: none; /* Handled by list-premium */
+  display: none;
+  /* Handled by list-premium */
 }
 
 /* ── Sections ── */
@@ -228,8 +229,13 @@
   gap: 1rem;
 }
 
-.blueprint-root .aud-si .aud-col-title { color: var(--b-electric-l); }
-.blueprint-root .aud-no .aud-col-title { color: var(--b-gray-3); }
+.blueprint-root .aud-si .aud-col-title {
+  color: var(--b-electric-l);
+}
+
+.blueprint-root .aud-no .aud-col-title {
+  color: var(--b-gray-3);
+}
 
 .blueprint-root .aud-list {
   display: flex;
@@ -331,7 +337,7 @@
 .blueprint-root .form-bp textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--b-border-w);
   border-radius: 6px;
   color: white;
@@ -350,6 +356,7 @@
 }
 
 @media (max-width: 900px) {
+
   .blueprint-root .hero-bp,
   .blueprint-root .dolor-grid,
   .blueprint-root .propuesta-grid,
@@ -358,5 +365,6 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-/* Legacy timeline styles removed */
+
+  /* Legacy timeline styles removed */
 }
