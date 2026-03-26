@@ -30,15 +30,16 @@ export default function SDDLandingPage() {
           </div>
 
           <h1 className="hero-h1">
-            El 90% de código generado<br />
-            con IA <span className="tq">es posible</span><span className="dim">.</span><br />
-            El 70% es <span className="ox">solo el inicio.</span>
+            El 70% de código generado<br />
+            con IA no es el techo.<br />
+            Es el <span className="tq">piso donde el sistema</span><br />
+            <span className="ox">empieza a mostrar su valor real.</span>
           </h1>
 
           <div className="hero-grid">
             <div>
               <p className="hero-sub">
-                Tu equipo tiene la exigencia: <strong>70% mínimo de código generado con IA es el piso, no el techo.</strong> El objetivo real es llegar al 90%+, con uptime de 99%+ y respuesta menor a 200ms en entornos de 100k+ RPM. Las herramientas existen. El problema es que sin un sistema que estructure cómo se usan, el código generado introduce deuda técnica más rápido de lo que la IA lo escribe.
+                En un equipo de 8 devs backend sobre microservicios hexagonales en Go llegamos ahí con vibe coding. Sin especificación formal. Con ciclos de corrección que consumían el tiempo que la IA supuestamente ahorraba. <strong>SDD invierte el orden: primero la spec, después el código.</strong> Eso es lo que lleva el porcentaje del 70% al 90%+ sin acumular la deuda técnica que hace colapsar el primer número.
               </p>
 
               <div className="hero-metrics">
@@ -94,24 +95,20 @@ export default function SDDLandingPage() {
 
         <div className="hero-stats-sdd">
           <div className="hs-item-sdd card-premium">
-            <div className="hs-num tq">90%+</div>
-            <div className="hs-label">objetivo real de código generado con IA. El 70% es el piso mínimo.</div>
+            <div className="hs-num tq">70% → 90%+</div>
+            <div className="hs-label">código IA. El 70% es el punto de partida donde el sistema empieza a diferenciarse del vibe coding.</div>
           </div>
           <div className="hs-item-sdd card-premium">
             <div className="hs-num green">95%+</div>
-            <div className="hs-label">cobertura de tests validada por el agente QA antes de cada PR</div>
+            <div className="hs-label">cobertura de tests. Validada por el agente QA antes de cada PR, no después del incidente.</div>
           </div>
           <div className="hs-item-sdd card-premium">
-            <div className="hs-num tq">99%+</div>
-            <div className="hs-label">uptime alcanzable con arquitectura correcta y observabilidad integrada</div>
+            <div className="hs-num tq">&lt;200ms p99</div>
+            <div className="hs-label">de respuesta sostenible. Definido como criterio de aceptación en la spec, no como meta de producción.</div>
           </div>
           <div className="hs-item-sdd card-premium">
-            <div className="hs-num green">&lt;200ms</div>
-            <div className="hs-label">p99 de respuesta sostenible en 100k+ RPM con patrones de diseño correctos</div>
-          </div>
-          <div className="hs-item-sdd card-premium">
-            <div className="hs-num tq">16+</div>
-            <div className="hs-label">años en ingeniería de software en producción real a escala</div>
+            <div className="hs-num green">6 semanas</div>
+            <div className="hs-label">de 0 a sistema operativo. Con acompañamiento semanal y entregable al cierre de cada semana.</div>
           </div>
         </div>
       </div>
@@ -358,24 +355,52 @@ export default function SDDLandingPage() {
         </div>
       </section>
 
+      {/* ─── POR QUÉ NO CONVIENE HACERLO SOLO ─── */}
+      <section className="brecha">
+        <div className="container-sdd">
+          <div className="sec-eyebrow">make vs. buy</div>
+          <h2 className="sec-h">El sistema SDD no es un secreto.<br /><em>La curva de aprendizaje sí lo es.</em></h2>
+          <div className="rule-sdd"></div>
+          <p className="sec-lead">
+            La lógica es pública: especificar antes de ejecutar, generar contra la spec, validar antes del PR.
+            Cualquier equipo con un Senior motivado puede leerlo y decidir hacerlo interno.
+          </p>
+          <div className="brecha-stat card-premium">
+            <div className="bst-text">
+              Lo que no está en la documentación de Cursor es esto: los primeros templates de spec que generamos eran
+              demasiado genéricos. El agente de generación los usaba para producir código que pasaba el análisis estático
+              pero no los contratos de la arquitectura. Encontrar el nivel de granularidad correcto para que las specs sean
+              ejecutables —ni tan abstractas que el modelo interprete libremente, ni tan detalladas que el proceso sea más
+              lento que escribir el código a mano— <strong>tomó semanas de iteración con tipos de tareas reales.</strong>
+              <br /><br />
+              Eso está incorporado en el engagement. No como teoría. Como configuración específica para tu stack y tu arquitectura,
+              validada en el piloto de la semana 4 antes del rollout.
+              <br /><br />
+              Si tenés un Senior con tiempo real disponible para investigar y absorber esa curva sin impactar el sprint, puede hacerlo.
+              Si ese tiempo sale del equipo que está entregando, el costo es otro.
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── PROCESO ─── */}
       <section className="proceso">
         <div className="container-sdd">
           <div className="sec-eyebrow">implementación</div>
-          <h2 className="sec-h">De cero a sistema operativo<br /><em>en el equipo en cuatro semanas.</em></h2>
+          <h2 className="sec-h">De cero a sistema operativo<br /><em>en 6 semanas. Sin freezar sprints.</em></h2>
           <div className="rule-sdd"></div>
           <p className="sec-lead">
-            La adopción de SDD en un equipo no es una migración de herramientas. Es un cambio en el orden en que se hace el trabajo. El proceso está diseñado para que el equipo lo incorpore como hábito mientras sigue entregando, sin freezar sprints ni crear deuda de proceso.
+            El engagement está diseñado para funcionar en los márgenes del trabajo real del equipo, no en el centro. La carga máxima es <strong>1 hora diaria de interrupción al sprint</strong>, concentrada en las semanas del piloto y la adopción. El resto del tiempo, el trabajo es propio del engagement. Cada semana cierra con un entregable concreto. Si al finalizar la semana 4 el piloto no cumple los criterios definidos al inicio, el engagement se detiene y no hay fee de cierre.
           </p>
 
           <div className="timeline-premium mt-12">
             {[
-              { num: '01', title: 'Auditoría', dur: 'Sem. 1', desc: 'Cómo usa IA el equipo hoy, dónde se rechazan PRs, dónde produce alucinaciones y errores que llegan a producción.' },
-              { num: '02', title: 'Relevamiento', dur: 'Sem. 2', desc: 'Arquitectura, funcionalidades, stack, estructura de desarrollo, patrones y protocolos del equipo.' },
-              { num: '03', title: 'Configuración', dur: 'Sem. 3', desc: 'Cursor / Windsurf / Antigravity con reglas del proyecto, MCPs, Skills y templates de spec por stack.', highlight: true },
-              { num: '04', title: 'Piloto', dur: 'Sem. 4', desc: 'Ciclo completo en una tarea real del sprint. Iterar hasta que el pipeline pase en primer ciclo consistentemente.' },
-              { num: '05', title: 'Adopción', dur: 'Sem. 5', desc: 'Capacitación del equipo completo. Cualquier miembro puede ejecutar el pipeline de principio a fin.' },
-              { num: '06', title: 'Métricas', dur: 'Sem. 6–8', desc: 'Porcentaje de código IA por PR, tasa de primer-pass, tiempo de ciclo. Ajuste del sistema según datos reales.' }
+              { num: '01', title: 'Auditoría', dur: 'Sem. 1', desc: 'Mapeo de uso actual de IA, análisis de PRs rechazados, identificación de alucinaciones que llegaron a producción.', carga: '3–5 h totales del Tech Lead. Sin impacto en el sprint.' },
+              { num: '02', title: 'Relevamiento', dur: 'Sem. 2', desc: 'Arquitectura, stack, patrones, protocolos del repo. Trabajo sobre código y documentación real.', carga: '2–3 h totales del Tech Lead + 1 h del equipo para revisión.' },
+              { num: '03', title: 'Configuración', dur: 'Sem. 3', desc: 'IDE con reglas del proyecto, MCPs, Skills, templates de spec por tipo de tarea, pipeline de validación.', carga: '2 sesiones de 45 min con el Tech Lead. El resto es trabajo propio del engagement.', highlight: true },
+              { num: '04', title: 'Piloto', dur: 'Sem. 4 — PUNTO DE CANCELACIÓN', desc: 'Ciclo completo sobre una tarea real del sprint: spec → generación → validación → PR. Si el sistema no cumple los criterios, el engagement se detiene sin costo adicional.', carga: '1 dev + Tech Lead, máx. 1 h/día durante 5 días hábiles.' },
+              { num: '05', title: 'Adopción', dur: 'Sem. 5', desc: 'Capacitación práctica del equipo completo. Cada persona ejecuta el pipeline sobre una tarea real con el sistema configurado.', carga: '1 sesión de 60 min por persona. Único día de carga concentrada del engagement.' },
+              { num: '06', title: 'Métricas y cierre', dur: 'Sem. 6', desc: 'Dashboard de métricas, baseline sem. 1 vs. resultados, ajustes finales, plan de optimización continua.', carga: 'Revisión semanal de 30 min. Sin otro impacto en el sprint.' },
             ].map((step, i) => (
               <div key={i} className={`timeline-step-premium ${step.highlight ? 'active' : ''}`}>
                 <div className="timeline-marker-p">
@@ -385,6 +410,7 @@ export default function SDDLandingPage() {
                 <div className="timeline-content-premium card-premium">
                   <h4>{step.title}</h4>
                   <p>{step.desc}</p>
+                  {step.carga && <p style={{marginTop: '0.75rem', fontSize: '0.8rem', opacity: 0.6, fontStyle: 'italic'}}>{step.carga}</p>}
                   <span className="step-tag">{step.dur}</span>
                 </div>
               </div>
@@ -532,7 +558,7 @@ export default function SDDLandingPage() {
                 </div>
                 <div className="aud-item">
                   <span className="aud-ic no">✕</span>
-                  <span>Buscás una <strong>solución de una sesión de capacitación</strong>. El engagement requiere auditoría, relevamiento, configuración, piloto y ajuste. El cambio de hábito toma 8 semanas reales, no una tarde.</span>
+                  <span>Buscás una <strong>solución de una sesión de capacitación</strong>. El engagement requiere auditoría, relevamiento, configuración, piloto y ajuste. El cambio de hábito toma 6 semanas reales, no una tarde.</span>
                 </div>
                 <div className="aud-item">
                   <span className="aud-ic no">✕</span>
@@ -554,13 +580,18 @@ export default function SDDLandingPage() {
           <div className="gar-layout">
             <div className="gar-main-card card-premium">
               <div className="gar-badge">Garantía de adopción medible</div>
-              <div className="gar-title">Si en la semana 6 el equipo no supera el 60% de código generado con IA con tasa de primer-pass en el pipeline de validación superior al 70%, continuamos el acompañamiento sin costo adicional hasta la semana 8.</div>
+              <div className="gar-title">Cada semana del engagement cierra con un entregable concreto. No con un informe de avance: con algo que el equipo puede usar desde el lunes siguiente.</div>
               <div className="gar-text">
-                Esta garantía no es un número inventado. Es la consecuencia lógica de un sistema que fue validado primero en proyectos propios antes de implementarse en equipos de terceros. <strong>Si la auditoría fue correcta, el relevamiento fue completo y la configuración del sistema es precisa, los números se alcanzan en el plazo.</strong>
+                <strong>Al cierre de cada semana:</strong><br /><br />
+                Semana 1: mapa de uso actual de IA del equipo + lista de fricciones identificadas.<br />
+                Semana 2: arquitectura relevada + contratos documentados + base para los templates de spec.<br />
+                Semana 3: IDE configurado con reglas del proyecto + MCPs activos + templates de spec por tipo de tarea.<br />
+                Semana 4: primera tarea entregada con SDD + informe del piloto + sistema ajustado para rollout.<br />
+                Semana 5: equipo completo operando el pipeline + playbook del proceso.<br />
+                Semana 6: dashboard de métricas + baseline sem. 1 vs. resultados + sistema autónomo entregado.<br /><br />
+                Si al cierre de la semana 4 el pipeline no pasa los criterios de aceptación definidos al inicio, podés cancelar el engagement sin costo adicional. Si al cierre de la semana 6 el equipo no supera el 60% de código IA con primer-pass &gt;70%, el fee de cierre se reduce proporcionalmente a la diferencia.
                 <br /><br />
-                Lo que esta garantía cubre: porcentaje de código AI-generated por PR, tasa de primer-pass en el pipeline de validación automatizado, y reducción medible de PRs rechazados por problemas de calidad estructural.
-                <br /><br />
-                Lo que no cubre: métricas de producción que dependen de factores externos al proceso de generación —inestabilidad de infraestructura, fallas de terceros, cambios de requerimientos de negocio en producción— ni equipos que no completan las etapas de auditoría y relevamiento con la profundidad necesaria.
+                <strong>El riesgo de que el sistema no funcione es mío. El tiempo de tu equipo es tuyo.</strong>
               </div>
             </div>
 
@@ -568,36 +599,36 @@ export default function SDDLandingPage() {
               <div className="gar-pt">
                 <div className="gar-pt-icon">✓</div>
                 <div>
+                  <div className="gar-pt-title">Entregable semanal</div>
+                  <div className="gar-pt-desc">Cada semana cierra con algo concreto que el equipo puede usar, no con un reporte de estado.</div>
+                </div>
+              </div>
+              <div className="gar-pt">
+                <div className="gar-pt-icon">✓</div>
+                <div>
+                  <div className="gar-pt-title">Check-in semana 4</div>
+                  <div className="gar-pt-desc">Después del piloto, punto de decisión. Si el sistema no cumple los criterios definidos al inicio, cancelación sin costo desde ese punto.</div>
+                </div>
+              </div>
+              <div className="gar-pt">
+                <div className="gar-pt-icon">✓</div>
+                <div>
+                  <div className="gar-pt-title">Reducción de fee</div>
+                  <div className="gar-pt-desc">Si al cierre de la semana 6 no se alcanzan los objetivos pactados, el fee final se reduce en proporción a la brecha.</div>
+                </div>
+              </div>
+              <div className="gar-pt">
+                <div className="gar-pt-icon">✓</div>
+                <div>
                   <div className="gar-pt-title">Criterios definidos antes de empezar</div>
-                  <div className="gar-pt-desc">El baseline se mide en la auditoría inicial. El objetivo se define antes del setup. No hay ambigüedad en qué significa éxito al final de las 8 semanas.</div>
+                  <div className="gar-pt-desc">El baseline se mide en la auditoría inicial. El objetivo se define en la semana 1, antes de cualquier configuración.</div>
                 </div>
               </div>
               <div className="gar-pt">
                 <div className="gar-pt-icon">✓</div>
                 <div>
-                  <div className="gar-pt-title">Piloto en código de producción real</div>
-                  <div className="gar-pt-desc">El sistema se valida con una tarea real del sprint del equipo antes del rollout general. Si el piloto no cumple los criterios, no se avanza al rollout: se ajusta el sistema.</div>
-                </div>
-              </div>
-              <div className="gar-pt">
-                <div className="gar-pt-icon">✓</div>
-                <div>
-                  <div className="gar-pt-title">Configuración específica al stack real del equipo</div>
-                  <div className="gar-pt-desc">No hay templates genéricos. La configuración del sistema multiagente usa las convenciones reales del repositorio, la arquitectura relevada y las herramientas existentes del equipo.</div>
-                </div>
-              </div>
-              <div className="gar-pt">
-                <div className="gar-pt-icon">✓</div>
-                <div>
-                  <div className="gar-pt-title">El sistema es autónomo al finalizar</div>
-                  <div className="gar-pt-desc">Al terminar las 8 semanas, el equipo tiene los playbooks, las reglas de proyecto configuradas y las guías para operar y mantener el sistema sin depender de soporte externo.</div>
-                </div>
-              </div>
-              <div className="gar-pt">
-                <div className="gar-pt-icon">✓</div>
-                <div>
-                  <div className="gar-pt-title">Si la auditoría concluye que SDD no es la solución, lo decimos</div>
-                  <div className="gar-pt-desc">Si el problema del equipo no es de metodología de generación sino de arquitectura base o de proceso de review, lo reportamos en la auditoría y no avanzamos al engagement completo.</div>
+                  <div className="gar-pt-title">Sistema autónomo al cierre</div>
+                  <div className="gar-pt-desc">Al terminar la semana 6, el equipo tiene el playbook, las reglas y las guías para operar sin depender de soporte externo.</div>
                 </div>
               </div>
             </div>
@@ -665,11 +696,21 @@ export default function SDDLandingPage() {
 
             <details>
               <summary>
-                ¿Cuánto tiempo requiere del equipo durante las 8 semanas?
+                ¿Cuánto tiempo requiere del equipo durante las 6 semanas?
                 <span className="fq-icon">+</span>
               </summary>
               <div className="fq-body">
-                El engagement está diseñado para no interrumpir la entrega del equipo. <strong>La semana 1 (auditoría) requiere entre 3 y 5 horas del tech lead o referente técnico.</strong> La semana 2 (relevamiento) requiere sesiones de trabajo sobre el código y la documentación real: 2 a 3 horas. Las semanas 3 y 4 (configuración y piloto) requieren 1 a 2 horas por sesión, 2 veces por semana. La semana 5 (adopción) incluye sesiones prácticas de 90 minutos para el equipo completo. Las semanas 6 a 8 son de seguimiento y ajuste: revisiones semanales de 30 a 45 minutos.
+                El criterio de diseño del engagement es claro: <strong>máximo 1 hora diaria de interrupción al sprint.</strong> En la práctica, la carga se distribuye así:
+                <br /><br />
+                <strong>Semanas 1 y 2</strong> (auditoría y relevamiento): 3 a 5 horas totales del Tech Lead, distribuidas en la semana. Sin impacto en el sprint del equipo.
+                <br />
+                <strong>Semana 3</strong> (configuración): 2 sesiones de 45 minutos con el Tech Lead. El resto es trabajo propio del engagement.
+                <br />
+                <strong>Semana 4</strong> (piloto): 1 dev + el Tech Lead, máximo 1 hora por día durante los 5 días hábiles de la semana. Es la semana de mayor carga concentrada.
+                <br />
+                <strong>Semana 5</strong> (adopción): 1 sesión de 60 minutos por persona del equipo. Es el único momento en que todo el equipo se detiene al mismo tiempo.
+                <br />
+                <strong>Semana 6</strong> (métricas y cierre): revisión semanal de 30 minutos. Sin otro impacto en el sprint.
               </div>
             </details>
 
@@ -712,8 +753,31 @@ export default function SDDLandingPage() {
             <div className="cta-note">
               <span style={{ color: 'var(--turquesa)', fontSize: '14px' }}>→</span>
               <p className="cta-note-text">
-                <strong>16 años en ingeniería de software en producción real a escala.</strong> Lideré la adopción de IA generativa en un equipo de alta exigencia hasta el 100% de adopción, con 70% de código generado por IA y reducción del 40% en tiempo de entrega. El objetivo siempre fue el 90%+. Ese proceso, adaptado a tu stack y tu equipo, es lo que implementamos.
+                <strong>SDD nació de un problema concreto:</strong> liderar un equipo de 8 devs backend sobre múltiples microservicios con arquitectura hexagonal en Go, con la exigencia de llegar al 100% de adopción de IA y un mínimo de 70% de código generado —sin una metodología formal que lo hiciera posible.
+                <br /><br />
+                Llegamos al objetivo. No con un sistema. Con prueba y error, vibe coding, y muchos rechazos de PR antes de encontrar el orden correcto. La pregunta que me quedó después de eso fue la que generó SDD: ¿cuánto tiempo y cuántos ciclos de corrección se ahorra un equipo cuando especifica antes de ejecutar?
+                <br /><br />
+                Eso es lo que viene a instalar este engagement en tu equipo.
               </p>
+            </div>
+          </div>
+
+          {/* Testimonios */}
+          <div style={{ padding: '3rem 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <div className="sec-eyebrow" style={{ marginBottom: '2rem', textAlign: 'center' }}>Quién validó este liderazgo</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              <div className="card-premium" style={{ padding: '2rem' }}>
+                <p style={{ color: 'var(--gray-1)', fontSize: '0.9rem', lineHeight: 1.7, fontStyle: 'italic', marginBottom: '1.5rem' }}>&ldquo;En Darío encontré a una persona enfocada en dar soluciones. Un líder de gestión que adquirió mucho conocimiento del producto y un background técnico que le empodera y lo enfoca a resultados. Le gusta documentar, dejar traza de su trabajo, convirtiéndose en referente natural de su entorno.&rdquo;</p>
+                <p style={{ fontSize: '0.72rem', opacity: 0.55, fontFamily: 'var(--font-code)', lineHeight: 1.5 }}>Project Leader · Mercado Libre · Trabajó en el mismo equipo · 4 feb 2026</p>
+              </div>
+              <div className="card-premium" style={{ padding: '2rem' }}>
+                <p style={{ color: 'var(--gray-1)', fontSize: '0.9rem', lineHeight: 1.7, fontStyle: 'italic', marginBottom: '1.5rem' }}>&ldquo;Me resultó muy valioso su interés por la innovación, especialmente su manejo de la IA, ayudándonos a entender cómo aprovechar estas herramientas en el día a día. Tiene facilidad para entender procesos complejos y estructurarlos de forma sencilla.&rdquo;</p>
+                <p style={{ fontSize: '0.72rem', opacity: 0.55, fontFamily: 'var(--font-code)', lineHeight: 1.5 }}>Project Leader · Mercado Libre · Trabajó en el mismo equipo · 2 feb 2026</p>
+              </div>
+              <div className="card-premium" style={{ padding: '2rem' }}>
+                <p style={{ color: 'var(--gray-1)', fontSize: '0.9rem', lineHeight: 1.7, fontStyle: 'italic', marginBottom: '1.5rem' }}>&ldquo;Darío se destacó por su sólido entendimiento del negocio, su versatilidad y su capacidad para liderar equipos en contextos regionales complejos. Impulsó y acompañó la implementación de nuevas features, asegurando entregas en tiempo y forma alineadas con los objetivos del negocio.&rdquo;</p>
+                <p style={{ fontSize: '0.72rem', opacity: 0.55, fontFamily: 'var(--font-code)', lineHeight: 1.5 }}>Software Engineer · Mercado Libre · Darío lo supervisaba · 2 feb 2026</p>
+              </div>
             </div>
           </div>
 
