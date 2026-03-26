@@ -159,7 +159,7 @@ export default function IATeamsLanding() {
                 </div>
               </div>
               <p className="mt-8 pt-8 border-t border-white/5 text-sm italic text-smoke-m">
-                "Partimos de un equipo que usaba la IA con curiosidad pero sin sistema. En tres meses teníamos un equipo que trabaja diferente."
+                &quot;Partimos de un equipo que usaba la IA con curiosidad pero sin sistema. En tres meses teníamos un equipo que trabaja diferente.&quot;
               </p>
             </div>
           </div>
@@ -202,10 +202,10 @@ export default function IATeamsLanding() {
               { step: '03', time: 'Semana 3-5', title: 'Implementación', desc: 'Entrenamos al equipo en el estándar. Medimos y ajustamos semana a semana.' },
               { step: '04', time: 'Días 31-60', title: 'Consolidación', desc: '30 días de acompañamiento post. Documentamos aprendizajes para la autonomía.' }
             ].map((item, i) => (
-              <div key={i} className="relative">
-                <div className="text-6xl font-bold text-accent/10 absolute -top-10 -left-4 select-none">{item.step}</div>
-                <div className="text-accent font-mono text-[10px] tracking-widest uppercase mb-2">{item.time}</div>
-                <h4 className="font-bold text-ghost-w mb-3">{item.title}</h4>
+              <div key={i} className="card-premium p-6">
+                <div className="text-accent font-mono text-[10px] tracking-widest uppercase mb-3">{item.time}</div>
+                <div className="text-4xl font-bold text-accent/20 mb-4 font-display">{item.step}</div>
+                <h4 className="font-bold text-ghost-w mb-2">{item.title}</h4>
                 <p className="text-sm text-smoke-m leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -252,7 +252,7 @@ export default function IATeamsLanding() {
               </div>
             </div>
             <div className="text-center lg:text-left">
-              <Link href="/contacto?asunto=IA Equipos" className="btn-premium-p py-6 px-12 text-xl">
+              <Link href="/contacto?asunto=IA Equipos" className="btn-premium-p">
                 Empezar evaluación ahora →
               </Link>
               <p className="text-smoke-m text-xs mt-6 opacity-60">

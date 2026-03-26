@@ -234,7 +234,7 @@ export default function AIAgentsLanding() {
               </div>
             </div>
             <div className="text-center lg:text-left">
-              <Link href="/contacto?asunto=Agentes IA" className="btn-premium-p py-6 px-12 text-xl">
+              <Link href="/contacto?asunto=Agentes IA" className="btn-premium-p">
                 Solicitar Mapeo Inicial →
               </Link>
               <p className="text-smoke-m text-xs mt-6 opacity-60">

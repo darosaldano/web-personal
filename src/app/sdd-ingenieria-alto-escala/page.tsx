@@ -193,7 +193,7 @@ export default function SDDLandingPage() {
                   <span className="bgci-icon">📈</span>
                   <div className="bgci-text">
                     <strong>El porcentaje sube porque el ciclo es confiable</strong>
-                    El dev usa IA en tareas complejas because el sistema garantiza que el output va a cumplir los estándares. La adopción se vuelve hábito, no riesgo.
+                     El dev usa IA en tareas complejas porque el sistema garantiza que el output va a cumplir los estándares. La adopción se vuelve hábito, no riesgo.
                   </div>
                 </div>
               </div>

@@ -317,15 +317,15 @@ export default function BlueprintPage() {
               <p className="prose" style={{color: '#DDD8D0'}}>
                 Si en la primera conversación no identificamos al menos un proceso crítico que valga la pena mapear, te lo decimos sin vueltas.
               </p>
-              <ul style={{marginTop: '2rem', listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', color: '#8E9A9E', fontSize: '0.9rem'}}>
-                <li><span style={{color: '#1ABFBF'}}>●</span> Primera conversación sin costo</li>
-                <li><span style={{color: '#1ABFBF'}}>●</span> Garantía de claridad total</li>
-                <li><span style={{color: '#1ABFBF'}}>●</span> Documento ejecutable propio</li>
+              <ul className="list-premium" style={{marginTop: '2rem'}}>
+                <li>Primera conversación sin costo</li>
+                <li>Garantía de claridad total</li>
+                <li>Documento ejecutable propio</li>
               </ul>
             </div>
 
             <div className="form-bp" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
-              <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p" style={{padding: '1.5rem 3rem', fontSize: '1.2rem', width: '100%'}}>
+              <Link href="/contacto?asunto=Blueprint Automatización" className="btn-premium-p" style={{width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '1.2rem 2rem'}}>
                 Quiero mapear mi proceso crítico →
               </Link>
               <p style={{marginTop: '1.5rem', fontSize: '0.8rem', opacity: 0.6, color: '#DDD8D0'}}>

@@ -144,7 +144,7 @@ export default function SoftwareMedidaLanding() {
                   { n: '04', t: 'QA contra spec', d: 'Validación estricta contra lo definido. Sin ambigüedad.' },
                   { n: '05', t: 'Entrega y traspaso', d: 'Código, arquitectura y manuales son tuyos. Soberanía total.' }
                 ].map((item, i) => (
-                  <li key={i} className="flex gap-6">
+                  <li key={i}>
                     <div>
                       <h5 className="font-bold text-ghost-w text-sm uppercase mb-1">{item.t}</h5>
                       <p className="text-xs text-smoke-m leading-relaxed">{item.d}</p>
@@ -246,7 +246,7 @@ export default function SoftwareMedidaLanding() {
               </div>
             </div>
             <div className="text-center lg:text-left">
-              <Link href="/contacto?asunto=Software a Medida" className="btn-premium-p py-6 px-12 text-xl">
+              <Link href="/contacto?asunto=Software a Medida" className="btn-premium-p">
                 Hablar de mi sistema →
               </Link>
               <p className="text-smoke-m text-xs mt-6 opacity-60">
